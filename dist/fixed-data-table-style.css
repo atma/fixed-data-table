@@ -1,7 +1,7 @@
 /**
- * FixedDataTable v0.6.5 
+ * FixedDataTable v1.0.0 
  *
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -10,7 +10,7 @@
  */
 
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -38,9 +38,16 @@
 }
 
 .public_fixedDataTable_header,
+.public_fixedDataTable_scrollbarSpacer,
 .public_fixedDataTable_header .public_fixedDataTableCell_main {
   background-color: #f6f7f8;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#efefef));
   background-image: linear-gradient(#fff, #efefef);
+}
+
+.public_fixedDataTable_scrollbarSpacer {
+  position: absolute;
+  z-index: 99;
 }
 
 .public_fixedDataTable_footer .public_fixedDataTableCell_main {
@@ -60,7 +67,7 @@
   background-color: #fff;
 }
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -89,8 +96,30 @@
 .public_fixedDataTableCell_columnResizerKnob {
   background-color: #0284ff;
 }
+.public_fixedDataTableCell_hasReorderHandle .public_fixedDataTableCell_cellContent {
+	margin-left: 12px;
+}
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Column reorder goodies.
+ */
+.fixedDataTableCellLayout_columnReorderContainer {
+  border-color: #0284ff;
+  background-color: rgba(0,0,0,0.1);
+  width: 12px;
+  margin-right: -12px;
+  float: left;
+  cursor: move;
+}
+.fixedDataTableCellLayout_columnReorderContainer:after {
+	content: '::';
+	position: absolute;
+	top: 50%;
+	left: 1px;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+/**
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -108,7 +137,7 @@
   border-color: #0284ff;
 }
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -137,8 +166,13 @@
 .public_fixedDataTableRow_columnsShadow {
   background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAFklEQVQIHWPSkNeSBmJhTQVtbiDNCgASagIIuJX8OgAAAABJRU5ErkJggg==) repeat-y;
 }
+
+.public_fixedDataTableRow_columnsRightShadow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -155,8 +189,9 @@
 
 /* Touching the scroll-track directly makes the scroll-track bolder */
 .public_Scrollbar_main.public_Scrollbar_mainActive,
-.public_Scrollbar_main:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+.public_Scrollbar_main {
+  background-color: #fff;
+  border-left: 1px solid #d3d3d3;
 }
 
 .public_Scrollbar_mainOpaque,

@@ -1,5 +1,5 @@
 /**
- * Copyright 2004-present Facebook. All Rights Reserved.
+ * Copyright Mercado Libre
  *
  * @providesModule UserAgent_DEPRECATED
  */

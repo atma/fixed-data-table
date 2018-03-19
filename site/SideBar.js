@@ -1,10 +1,9 @@
 "use strict";
 
 var React = require('react');
-var createReactClass = require('create-react-class');
 var Constants = require('./Constants');
 
-var SideBar = createReactClass({
+class SideBar extends React.Component {
   render() {
     return (
       <div className="sideBar">
@@ -13,7 +12,7 @@ var SideBar = createReactClass({
         </div>
       </div>
     );
-  },
+  }
 
   _renderSections(pages) {
     return Object.keys(pages).map(pageKey => {
@@ -34,13 +33,13 @@ var SideBar = createReactClass({
         page.location
       );
     });
-  },
+  }
 
   _renderGroupTitle(title) {
     return (
       <h4 className="groupTitle">{title}</h4>
     );
-  },
+  }
 
   _renderLink(linkName, linkUrl) {
     var arrow = <span className="arrowBullet" />;
@@ -57,7 +56,7 @@ var SideBar = createReactClass({
         </a>
       </h2>
     );
-  },
-});
+  }
+};
 
 module.exports = SideBar;

@@ -1,8 +1,8 @@
 "use strict";
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var IndexPage = require('./IndexPage');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const IndexPage = require('./IndexPage');
 
 ReactDOM.render(
   <IndexPage

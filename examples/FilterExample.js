@@ -1,35 +1,14 @@
 /**
- * This file provided by Facebook is for non-commercial testing and evaluation
- * purposes only. Facebook reserves all rights not expressly granted.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * Copyright Mercado Libre
  */
 
 "use strict";
 
-var ExampleImage = require('./helpers/ExampleImage');
-var FakeObjectDataListStore = require('./helpers/FakeObjectDataListStore');
-var FixedDataTable = require('fixed-data-table');
-var React = require('react');
-
-const {Table, Column, Cell} = FixedDataTable;
-
-const ImageCell = ({rowIndex, data, col, ...props}) => (
-  <ExampleImage
-    src={data.getObjectAt(rowIndex)[col]}
-  />
-);
-
-const TextCell = ({rowIndex, data, col, ...props}) => (
-  <Cell {...props}>
-    {data.getObjectAt(rowIndex)[col]}
-  </Cell>
-);
+const ExampleImage = require('./helpers/ExampleImage');
+const FakeObjectDataListStore = require('./helpers/FakeObjectDataListStore');
+const { ImageCell, TextCell } = require('./helpers/cells');
+const { Table, Column, Cell } = require('frontend-datatable');
+const React = require('react');
 
 class DataListWrapper {
   constructor(indexMap, data) {
@@ -99,35 +78,41 @@ class FilterExample extends React.Component {
           height={500}
           {...this.props}>
           <Column
-            cell={<ImageCell data={filteredDataList} col="avatar" />}
+            columnKey="avatar"
+            cell={<ImageCell data={filteredDataList} />}
             fixed={true}
             width={50}
           />
           <Column
+            columnKey="firstName"
             header={<Cell>First Name</Cell>}
-            cell={<TextCell data={filteredDataList} col="firstName" />}
+            cell={<TextCell data={filteredDataList} />}
             fixed={true}
             width={100}
           />
           <Column
+            columnKey="lastName"
             header={<Cell>Last Name</Cell>}
-            cell={<TextCell data={filteredDataList} col="lastName" />}
+            cell={<TextCell data={filteredDataList} />}
             fixed={true}
             width={100}
           />
           <Column
+            columnKey="city"
             header={<Cell>City</Cell>}
-            cell={<TextCell data={filteredDataList} col="city" />}
+            cell={<TextCell data={filteredDataList} />}
             width={100}
           />
           <Column
+            columnKey="street"
             header={<Cell>Street</Cell>}
-            cell={<TextCell data={filteredDataList} col="street" />}
+            cell={<TextCell data={filteredDataList} />}
             width={200}
           />
           <Column
+            columnKey="zipCode"
             header={<Cell>Zip Code</Cell>}
-            cell={<TextCell data={filteredDataList} col="zipCode" />}
+            cell={<TextCell data={filteredDataList} />}
             width={200}
           />
         </Table>

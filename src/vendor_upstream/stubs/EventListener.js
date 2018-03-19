@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -10,7 +10,7 @@
  * @typechecks
  */
 
-var emptyFunction = require('emptyFunction');
+import emptyFunction from 'emptyFunction';
 
 /**
  * Upstream version of event listener. Does not take into account specific

@@ -1,7 +1,7 @@
 /**
- * FixedDataTable v0.6.5 
+ * FixedDataTable v1.0.0 
  *
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -10,7 +10,7 @@
  */
 
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -41,7 +41,7 @@
   top: 0;
 }
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -55,7 +55,8 @@
   border-right-style: solid;
   border-right-width: 1px;
   border-width: 0 1px 0 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: block;
   overflow: hidden;
   position: absolute;
@@ -109,7 +110,7 @@
   width: 4px;
 }
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -129,7 +130,8 @@
 .fixedDataTableColumnResizerLineLayout_main {
   border-right-style: solid;
   border-right-width: 1px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: absolute;
   z-index: 10;
 }
@@ -146,7 +148,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   display: none !important;
 }
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -159,7 +161,8 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 .fixedDataTableLayout_main {
   border-style: solid;
   border-width: 1px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow: hidden;
   position: relative;
 }
@@ -198,7 +201,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   position: absolute;
 }
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -209,7 +212,8 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  */
 
 .fixedDataTableRowLayout_main {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -219,6 +223,13 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   left: 0;
   position: absolute;
   top: 0;
+}
+
+.fixedDataTableRowLayout_rowExpanded {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  left: 0;
+  position: absolute;
 }
 
 .fixedDataTableRowLayout_fixedColumnsDivider {
@@ -233,7 +244,12 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 }
 
 .fixedDataTableRowLayout_columnsShadow {
+  position: absolute;
   width: 4px;
+}
+
+.fixedDataTableRowLayout_columnsRightShadow {
+  right: 1px;
 }
 
 .fixedDataTableRowLayout_rowWrapper {
@@ -241,7 +257,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   top: 0;
 }
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -252,12 +268,11 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  */
 
 .ScrollbarLayout_main {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: none;
   overflow: hidden;
   position: absolute;
-  transition-duration: 250ms;
-  transition-timing-function: ease;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -268,20 +283,14 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   bottom: 0;
   right: 0;
   top: 0;
-  transition-property: background-color width;
   width: 15px;
-}
-
-.ScrollbarLayout_mainVertical.public_Scrollbar_mainActive,
-.ScrollbarLayout_mainVertical:hover {
-  width: 17px;
 }
 
 .ScrollbarLayout_mainHorizontal {
   bottom: 0;
   height: 15px;
   left: 0;
-  transition-property: background-color height;
+  /*transition-property: background-color height;*/
 }
 
 /* Touching the scroll-track directly makes the scroll-track bolder */
@@ -295,6 +304,9 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   overflow: hidden;
   position: absolute;
   z-index: 1;
+  /*transition-duration: 250ms;*/
+  /*transition-timing-function: ease;*/
+  /*transition-property: background-color width position;*/
 }
 
 /**
@@ -308,7 +320,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   content: '';
   display: block;
   position: absolute;
-  transition: background-color 250ms ease;
+  /*transition: background-color 250ms ease;*/
 }
 
 .ScrollbarLayout_faceHorizontal {
@@ -324,6 +336,11 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   width: 100%;
 }
 
+.ScrollbarLayout_faceHorizontal.public_Scrollbar_faceActive:after,
+.ScrollbarLayout_main:hover .ScrollbarLayout_faceHorizontal:after {
+  bottom: calc(4px/2);
+}
+
 .ScrollbarLayout_faceVertical {
   left: 0;
   right: 0;
@@ -336,8 +353,14 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   right: 4px;
   top: 0;
 }
+
+.ScrollbarLayout_main:hover .ScrollbarLayout_faceVertical:after,
+.ScrollbarLayout_faceVertical.public_Scrollbar_faceActive:after {
+  left: calc(4px/2);
+  right: calc(4px/2);
+}
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -365,9 +388,16 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 }
 
 .public_fixedDataTable_header,
+.public_fixedDataTable_scrollbarSpacer,
 .public_fixedDataTable_header .public_fixedDataTableCell_main {
   background-color: #f6f7f8;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#efefef));
   background-image: linear-gradient(#fff, #efefef);
+}
+
+.public_fixedDataTable_scrollbarSpacer {
+  position: absolute;
+  z-index: 99;
 }
 
 .public_fixedDataTable_footer .public_fixedDataTableCell_main {
@@ -387,7 +417,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   background-color: #fff;
 }
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -416,8 +446,30 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 .public_fixedDataTableCell_columnResizerKnob {
   background-color: #0284ff;
 }
+.public_fixedDataTableCell_hasReorderHandle .public_fixedDataTableCell_cellContent {
+	margin-left: 12px;
+}
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Column reorder goodies.
+ */
+.fixedDataTableCellLayout_columnReorderContainer {
+  border-color: #0284ff;
+  background-color: rgba(0,0,0,0.1);
+  width: 12px;
+  margin-right: -12px;
+  float: left;
+  cursor: move;
+}
+.fixedDataTableCellLayout_columnReorderContainer:after {
+	content: '::';
+	position: absolute;
+	top: 50%;
+	left: 1px;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+/**
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -435,7 +487,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   border-color: #0284ff;
 }
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -464,8 +516,13 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 .public_fixedDataTableRow_columnsShadow {
   background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAFklEQVQIHWPSkNeSBmJhTQVtbiDNCgASagIIuJX8OgAAAABJRU5ErkJggg==) repeat-y;
 }
+
+.public_fixedDataTableRow_columnsRightShadow {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -482,8 +539,9 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 
 /* Touching the scroll-track directly makes the scroll-track bolder */
 .public_Scrollbar_main.public_Scrollbar_mainActive,
-.public_Scrollbar_main:hover {
-  background-color: rgba(255, 255, 255, 0.8);
+.public_Scrollbar_main {
+  background-color: #fff;
+  border-left: 1px solid #d3d3d3;
 }
 
 .public_Scrollbar_mainOpaque,

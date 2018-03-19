@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -12,9 +12,9 @@
 
 'use strict';
 
-var BrowserSupportCore = require('BrowserSupportCore');
+import BrowserSupportCore from 'BrowserSupportCore';
 
-var getVendorPrefixedName = require('getVendorPrefixedName');
+import getVendorPrefixedName from 'getVendorPrefixedName';
 
 var TRANSFORM = getVendorPrefixedName('transform');
 var BACKFACE_VISIBILITY = getVendorPrefixedName('backfaceVisibility');

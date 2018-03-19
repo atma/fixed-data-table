@@ -146,6 +146,14 @@ To get any additional CSS classes that should be added to a row,
 type: `func`
 
 
+### `rowKeyGetter`
+
+If specified, `rowKeyGetter(index)` is called for each row and the
+returned value overrides `key` for the particular row.
+
+type: `func`
+
+
 ### `groupHeaderHeight`
 
 Pixel height of the column group header.
@@ -306,4 +314,3 @@ type: `func`
 Whether a column is currently being resized.
 
 type: `bool`
-

@@ -1,16 +1,15 @@
 "use strict";
 
 var React = require('react');
-var createReactClass = require('create-react-class');
 var Constants = require('./Constants');
 
 require('./miniHeader.less');
 
-var GITHUB_URL = 'https://github.com/facebook/fixed-data-table';
+var GITHUB_URL = 'https://github.com/mercadolibre/fury_frontend-datatable';
 var DOCS_DEFAULT_LOCATION = Constants.DOCS_DEFAULT.location;
 var EXAMPLES_DEFAULT_LOCATION = Constants.EXAMPLES_DEFAULT.location;
 
-var MiniHeader = createReactClass({
+class MiniHeader extends React.Component {
   render() {
     return (
       <div className="header">
@@ -28,6 +27,6 @@ var MiniHeader = createReactClass({
       </div>
     );
   }
-});
+};
 
 module.exports = MiniHeader;

@@ -1,7 +1,6 @@
 "use strict";
 
 var React = require('react');
-var createReactClass = require('create-react-class');
 var ReactDOM = require('react-dom');
 var Constants = require('../Constants');
 
@@ -9,18 +8,20 @@ var FIXED_THRESHOLD = 680;
 var MAX_HEIGHT = 800;
 var HEADER_HEIGHT = 50;
 var EMPTY_OBJECT = {};
-var GITHUB_URL = 'https://github.com/facebook/fixed-data-table';
+var GITHUB_URL = 'https://github.com/mercadolibre/fury_frontend-datatable';
 var DOCS_DEFAULT_LOCATION = Constants.DOCS_DEFAULT.location;
 var EXAMPLES_DEFAULT_LOCATION = Constants.EXAMPLES_DEFAULT.location;
 
-var Header = createReactClass({
-  getInitialState() {
-    return {
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       scroll: 0,
       fixed: false,
       renderHero: false,
     };
-  },
+  }
 
   componentDidMount() {
     this.offsetWidth = this._getWindowWidth();
@@ -32,31 +33,31 @@ var Header = createReactClass({
       renderHero: true,
       fixed: this.offsetWidth <= FIXED_THRESHOLD,
     });
-  },
+  }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
     window.removeEventListener('resize', this.handleResize);
-  },
+  }
 
-  handleResize(event) {
+  handleResize = (event) => {
     this.offsetWidth = this._getWindowWidth();
     this.offsetHeight = ReactDOM.findDOMNode(this).offsetHeight;
     this.setState({
       fixed: this.offsetWidth <= FIXED_THRESHOLD,
     });
     this.forceUpdate();
-  },
+  }
 
-  handleScroll(event) {
+  handleScroll = (event) => {
     var scrollPos = window.scrollY;
     scrollPos = scrollPos < this.offsetHeight ? scrollPos : this.offsetHeight;
     this.setState({ scroll: Math.max(scrollPos, 0) });
-  },
+  }
 
   _getWindowWidth() {
     return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  },
+  }
 
   _renderHero() {
     var HeroTable = require('./HeroTable');
@@ -71,7 +72,7 @@ var Header = createReactClass({
         />
       </div>
     );
-  },
+  }
 
   render() {
     var coverHeight  = this.offsetHeight - this.state.scroll;
@@ -118,8 +119,7 @@ var Header = createReactClass({
         </div>
       </div>
     );
-  },
-
-});
+  }
+}
 
 module.exports = Header;

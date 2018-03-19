@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * This is utility that hanlds onWheel events and calls provided wheel
+ * This is utility that handles onWheel events and calls provided wheel
  * callback with correct frame rate.
  *
  * @providesModule ReactWheelHandler
@@ -15,9 +15,9 @@
 
 'use strict';
 
-var emptyFunction = require('emptyFunction');
-var normalizeWheel = require('normalizeWheel');
-var requestAnimationFramePolyfill = require('requestAnimationFramePolyfill');
+import emptyFunction from 'emptyFunction';
+import normalizeWheel from 'normalizeWheel';
+import requestAnimationFramePolyfill from 'requestAnimationFramePolyfill';
 
 class ReactWheelHandler {
   /**

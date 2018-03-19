@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -12,9 +12,9 @@
 
 'use strict';
 
-var Heap = require('Heap');
+import Heap from 'Heap';
 
-var invariant = require('invariant');
+import invariant from 'invariant';
 
 // Data structure that allows to store values and assign positions to them
 // in a way to minimize changing positions of stored values when new ones are

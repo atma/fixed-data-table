@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -12,9 +12,9 @@
 
 'use strict';
 
-var UserAgent_DEPRECATED = require('UserAgent_DEPRECATED');
+import UserAgent_DEPRECATED from 'UserAgent_DEPRECATED';
 
-var isEventSupported = require('isEventSupported');
+import isEventSupported from 'isEventSupported';
 
 
 // Reasonable defaults

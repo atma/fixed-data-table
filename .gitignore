@@ -1,4 +1,4 @@
-.DS_STORE
+.DS_Store
 node_modules
 *~
 *.log*
@@ -9,4 +9,6 @@ __site_prerender__
 internal
 docs/api
 dist
+.idea
+.tmp
 *.swp

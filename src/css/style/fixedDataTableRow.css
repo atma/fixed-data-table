@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -13,18 +13,22 @@
  * Table row.
  */
 .public/fixedDataTableRow/main {
-  background-color: var(fbui-white);
+  background-color: var(--fbui-white);
 }
 
 .public/fixedDataTableRow/highlighted,
 .public/fixedDataTableRow/highlighted .public/fixedDataTableCell/main {
-  background-color: var(fbui-desktop-background-light);
+  background-color: var(--fbui-desktop-background-light);
 }
 
 .public/fixedDataTableRow/fixedColumnsDivider {
-  border-color: #d3d3d3;
+  border-color: var(--border-color);
 }
 
 .public/fixedDataTableRow/columnsShadow {
   background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAFklEQVQIHWPSkNeSBmJhTQVtbiDNCgASagIIuJX8OgAAAABJRU5ErkJggg==) repeat-y;
+}
+
+.public/fixedDataTableRow/columnsRightShadow {
+  transform: rotate(180deg);
 }

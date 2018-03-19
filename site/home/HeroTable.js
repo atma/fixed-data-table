@@ -1,7 +1,7 @@
 "use strict";
 
 var FakeObjectDataListStore = require('../../examples/helpers/FakeObjectDataListStore');
-var FixedDataTable = require('fixed-data-table');
+var FixedDataTable = require('frontend-datatable');
 var React = require('react');
 var Constants = require('../Constants');
 
@@ -10,18 +10,18 @@ var Column = FixedDataTable.Column;
 var Cell = FixedDataTable.Cell;
 
 // Require common FixedDataTable CSS.
-require('fixed-data-table/css/layout/ScrollbarLayout.css');
-require('fixed-data-table/css/layout/fixedDataTableLayout.css');
-require('fixed-data-table/css/layout/fixedDataTableCellLayout.css');
-require('fixed-data-table/css/layout/fixedDataTableCellGroupLayout.css');
-require('fixed-data-table/css/layout/fixedDataTableColumnResizerLineLayout.css');
-require('fixed-data-table/css/layout/fixedDataTableRowLayout.css');
+require('frontend-datatable/css/layout/ScrollbarLayout.css');
+require('frontend-datatable/css/layout/fixedDataTableLayout.css');
+require('frontend-datatable/css/layout/fixedDataTableCellLayout.css');
+require('frontend-datatable/css/layout/fixedDataTableCellGroupLayout.css');
+require('frontend-datatable/css/layout/fixedDataTableColumnResizerLineLayout.css');
+require('frontend-datatable/css/layout/fixedDataTableRowLayout.css');
 
-require('fixed-data-table/css/style/fixedDataTable.css');
-require('fixed-data-table/css/style/fixedDataTableCell.css');
-require('fixed-data-table/css/style/fixedDataTableColumnResizerLine.css');
-require('fixed-data-table/css/style/fixedDataTableRow.css');
-require('fixed-data-table/css/style/Scrollbar.css');
+require('frontend-datatable/css/style/fixedDataTable.css');
+require('frontend-datatable/css/style/fixedDataTableCell.css');
+require('frontend-datatable/css/style/fixedDataTableColumnResizerLine.css');
+require('frontend-datatable/css/style/fixedDataTableRow.css');
+require('frontend-datatable/css/style/Scrollbar.css');
 
 var dataList = new FakeObjectDataListStore();
 var FakeTextCell = ({rowIndex, field, ...props}) => (
