@@ -27,10 +27,10 @@ class ReactWheelHandler {
    * this order
    */
   constructor(
-    /*function*/ onWheel,
-    /*boolean|function*/ handleScrollX,
-    /*boolean|function*/ handleScrollY,
-    /*?boolean|?function*/ stopPropagation
+    onWheel,
+    handleScrollX,
+    handleScrollY,
+    stopPropagation
   ) {
     this._animationFrameID = null;
     this._deltaX = 0;
@@ -61,7 +61,7 @@ class ReactWheelHandler {
     this.onWheel = this.onWheel.bind(this);
   }
 
-  onWheel(/*object*/ event) {
+  onWheel(event) {
     var normalizedEvent = normalizeWheel(event);
     var deltaX = this._deltaX + normalizedEvent.pixelX;
     var deltaY = this._deltaY + normalizedEvent.pixelY;

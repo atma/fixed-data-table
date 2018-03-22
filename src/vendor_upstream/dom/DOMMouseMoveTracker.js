@@ -31,10 +31,10 @@ class DOMMouseMoveTracker {
    * onMoveEnd is called on mouse up when movement has ended.
    */
   constructor(
-    /*function*/ onMove,
-    /*function*/ onMoveEnd,
-    /*DOMElement*/ domNode,
-    /*boolean*/ touchEnabled) {
+    onMove,
+    onMoveEnd,
+    domNode,
+    touchEnabled) {
     this._isDragging = false;
     this._isTouchEnabled = touchEnabled;
     this._animationFrameID = null;
@@ -53,7 +53,7 @@ class DOMMouseMoveTracker {
    * listeners are added at the document.body level. It takes in an event
    * in order to grab inital state.
    */
-  captureMouseMoves(/*object*/ event) {
+  captureMouseMoves(event) {
     if (!this._eventMoveToken && !this._eventUpToken && !this._eventLeaveToken) {
       this._eventMoveToken = EventListener.listen(
         this._domNode,
@@ -142,14 +142,14 @@ class DOMMouseMoveTracker {
   /**
    * Returns whether or not if the mouse movement is being tracked.
    */
-  isDragging() /*boolean*/{
+  isDragging() {
     return this._isDragging;
   }
 
   /**
    * Calls onMove passed into constructor and updates internal state.
    */
-  _onMouseMove(/*object*/ event) {
+  _onMouseMove(event) {
     var coordinates = FixedDataTableEventHelper.getCoordinatesFromEvent(event);
     var x = coordinates.x;
     var y = coordinates.y;

@@ -5,12 +5,12 @@
 const faker = require('faker');
 
 class FakeObjectDataListStore {
-  constructor(/*number*/ size) {
+  constructor(size) {
     this.size = size || 2000;
     this._cache = [];
   }
 
-  createFakeRowObjectData(/*number*/ index) /*object*/ {
+  createFakeRowObjectData(index) {
     return {
       id: index,
       avatar: faker.image.avatar(),
@@ -29,8 +29,8 @@ class FakeObjectDataListStore {
     };
   }
 
-  getObjectAt(/*number*/ index) /*?object*/ {
-    if (index < 0 || index > this.size){
+  getObjectAt(index) {
+    if (index < 0 || index > this.size) {
       return undefined;
     }
 

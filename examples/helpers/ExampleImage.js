@@ -51,7 +51,7 @@ class ExampleImage extends React.Component {
     return <div className="exampleImage" style={style} />;
   }
 
-  _load(/*string*/ src) {
+  _load(src) {
     if (ReadyPool[src]) {
       this.setState({src: src});
       return;
@@ -78,7 +78,7 @@ class ExampleImage extends React.Component {
     img.src = src;
   }
 
-  _onLoad(/*string*/ src) {
+  _onLoad(src) {
     ReadyPool[src] = true;
     if (src === this.props.src) {
       this.setState({

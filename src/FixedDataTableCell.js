@@ -205,7 +205,7 @@ class FixedDataTableCell extends Component {
     this.setState(newState);
   }
 
-  render() /*object*/ {
+  render() {
     var {height, width, columnKey, ...props} = this.props;
 
     var style = {
@@ -268,7 +268,7 @@ class FixedDataTableCell extends Component {
     }
 
     var columnReorderComponent;
-    if (props.onColumnReorder) { //header row
+    if (props.onColumnReorder) { // header row
       columnReorderComponent = (
         <FixedDataTableColumnReorderHandle
           columnKey={this.columnKey}
@@ -314,7 +314,7 @@ class FixedDataTableCell extends Component {
     );
   }
 
-  _onColumnResizerMouseDown(/*object*/ event) {
+  _onColumnResizerMouseDown(event) {
     this.props.onColumnResize(
       this.props.left,
       this.props.width,
@@ -333,7 +333,7 @@ class FixedDataTableCell extends Component {
     }
   }
 
-  _onColumnReorderMouseDown(/*object*/ event) {
+  _onColumnReorderMouseDown(event) {
     this.props.onColumnReorder(
       this.props.columnKey,
       this.props.width,

@@ -122,9 +122,9 @@ var PAGE_HEIGHT = 800;
  *         Firefox v4/Win7  |     undefined    |       3
  *
  */
-function normalizeWheel(/*object*/ event) /*object*/ {
-  var sX = 0, sY = 0,       // spinX, spinY
-      pX = 0, pY = 0;       // pixelX, pixelY
+function normalizeWheel(event) {
+  let sX = 0, sY = 0, // spinX, spinY
+      pX = 0, pY = 0; // pixelX, pixelY
 
   // Legacy
   if ('detail'      in event) { sY = event.detail; }
@@ -158,10 +158,12 @@ function normalizeWheel(/*object*/ event) /*object*/ {
   if (pX && !sX) { sX = (pX < 1) ? -1 : 1; }
   if (pY && !sY) { sY = (pY < 1) ? -1 : 1; }
 
-  return { spinX  : sX,
-           spinY  : sY,
-           pixelX : pX,
-           pixelY : pY };
+  return {
+    spinX: sX,
+    spinY: sY,
+    pixelX: pX,
+    pixelY: pY
+  };
 }
 
 
@@ -170,12 +172,10 @@ function normalizeWheel(/*object*/ event) /*object*/ {
  * the older DOMMouseScroll for Firefox, as FF does not include wheelDelta with
  * 'wheel' event, making spin speed determination impossible.
  */
-normalizeWheel.getEventType = function() /*string*/ {
+normalizeWheel.getEventType = function() {
   return (UserAgent_DEPRECATED.firefox())
-           ? 'DOMMouseScroll'
-           : (isEventSupported('wheel'))
-               ? 'wheel'
-               : 'mousewheel';
+    ? 'DOMMouseScroll'
+    : (isEventSupported('wheel') ? 'wheel' : 'mousewheel');
 };
 
 module.exports = normalizeWheel;
