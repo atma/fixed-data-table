@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -9,8 +9,8 @@
  * @providesModule requestAnimationFramePolyfill
  */
 
-var emptyFunction = require('emptyFunction');
-var nativeRequestAnimationFrame = require('nativeRequestAnimationFrame');
+import emptyFunction from 'emptyFunction';
+import nativeRequestAnimationFrame from 'nativeRequestAnimationFrame';
 
 var lastTime = 0;
 

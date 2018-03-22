@@ -6,14 +6,13 @@ var MiniHeader = require('../MiniHeader');
 var SideBar = require('../SideBar');
 var StaticHTMLBlock = require('../StaticHTMLBlock');
 var React = require('react');
-var createReactClass = require('create-react-class');
 var Constants = require('../Constants');
 
 var DocsPages = Constants.DocsPages;
 
 var DOCS_MARKDOWN_FILES = {
   [DocsPages.DOCS.GETTING_STARTED.location]: require('../../docs/README.md'),
-  [DocsPages.DOCS.V6_MIGRATION.location]: require('../../docs/v6-migration.md'),
+  [DocsPages.DOCS.CODEBASE_OVERVIEW.location]: require('../../docs/codebase.md'),
 
   // API
   [DocsPages.API.TABLE_API.location]: require('../../docs/api/TableAPI.md'),
@@ -27,30 +26,30 @@ var DOCS_MARKDOWN_FILES = {
   [DocsPages.API_V5.COLUMNGROUP_API.location]: require('../../docs/api-v0.5/ColumnGroupAPI.md'),
 };
 
-var DocsPage = createReactClass({
+class DocsPage extends React.Component {
   render() {
     var HTML = DOCS_MARKDOWN_FILES[this.props.page.location];
 
     return (
       <div className="docsPage">
-        <MiniHeader />
+      <MiniHeader />
 
-        <div className="pageBody" id="body">
-          <div className="contents">
-            <SideBar
-              title="API"
-              pages={DocsPages}
-              page={this.props.page}
-            />
-            <StaticHTMLBlock
-              className="docContents"
-              html={HTML}
-            />
-          </div>
-        </div>
+      <div className="pageBody" id="body">
+      <div className="contents">
+      <SideBar
+      title="API"
+      pages={DocsPages}
+      page={this.props.page}
+      />
+      <StaticHTMLBlock
+      className="docContents"
+      html={HTML}
+      />
+      </div>
+      </div>
       </div>
     );
-  },
-});
+  }
+};
 
 module.exports = DocsPage;

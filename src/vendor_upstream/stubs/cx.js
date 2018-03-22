@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -9,8 +9,8 @@
  * @providesModule cx
  */
 
-var slashReplaceRegex = /\//g;
-var cache = {};
+const slashReplaceRegex = /\//g;
+const cache = {};
 
 function getClassName(className) {
   if (cache[className]) {
@@ -37,8 +37,8 @@ function getClassName(className) {
  * @return string       Renderable space-separated CSS className.
  */
 function cx(classNames) {
-  var classNamesArray;
-  if (typeof classNames == 'object') {
+  let classNamesArray;
+  if (typeof classNames === 'object') {
     classNamesArray = Object.keys(classNames).filter(function(className) {
       return classNames[className];
     });

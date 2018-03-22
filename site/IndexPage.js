@@ -2,28 +2,23 @@
 
 require('./base.less');
 
-var Constants = require('./Constants');
-var HomePage = require('./home/HomePage');
-var DocsPage = require('./docs/DocsPage');
-var ExamplesPage = require('./examples/ExamplesPage');
-var React = require('react');
-var createReactClass = require('create-react-class');
-var ReactDOMServer = require('react-dom/server');
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
+const HomePage = require('./home/HomePage');
+const DocsPage = require('./docs/DocsPage');
+const ExamplesPage = require('./examples/ExamplesPage');
+const { DocsPages, ExamplePages, OtherPages } = require('./Constants');
 
-var faviconURL = require('./images/favicon.png');
-
-var DocsPages = Constants.DocsPages;
-var ExamplePages = Constants.ExamplePages;
-var OtherPages = Constants.OtherPages;
+const faviconURL = require('./images/favicon.png');
 
 function getPageForLocation(pages, location) {
-  for (var key in pages) {
+  for (const key in pages) {
     if (!pages.hasOwnProperty(key) || typeof pages[key] !== 'object') {
       continue;
     }
 
     if (pages[key].groupTitle) {
-      var nestedPage = getPageForLocation(pages[key], location);
+      const nestedPage = getPageForLocation(pages[key], location);
       if (nestedPage) {
         return nestedPage;
       }
@@ -37,29 +32,29 @@ function getPageForLocation(pages, location) {
   return null;
 }
 
-var IndexPage = createReactClass({
-  statics: {
-    getDoctype() {
-      return '<!doctype html>';
-    },
+class IndexPage extends React.Component {
+  static getDoctype() {
+    return '<!doctype html>';
+  }
 
-    renderToString(props) {
-      return IndexPage.getDoctype() +
-        ReactDOMServer.renderToString(<IndexPage {...props} />);
-    },
-  },
+  static renderToString(props) {
+    return IndexPage.getDoctype() +
+      ReactDOMServer.renderToString(<IndexPage {...props} />);
+  }
 
-  getInitialState() {
-    return {
+  constructor(props) {
+    super(props);
+
+    this.state = {
       renderPage: !this.props.devMode
     };
-  },
+  }
 
   render() {
     // Dump out our current props to a global object via a script tag so
     // when initialising the browser environment we can bootstrap from the
     // same props as what each page was rendered with.
-    var browserInitScriptObj = {
+    const browserInitScriptObj = {
       __html: 'window.INITIAL_PROPS = ' + JSON.stringify(this.props) + ';\n'
     };
 
@@ -78,13 +73,11 @@ var IndexPage = createReactClass({
           {this.state.renderPage && this._renderPage()}
 
           <script dangerouslySetInnerHTML={browserInitScriptObj} />
-          <script src="https://cdn.rawgit.com/zynga/scroller/master/src/Animate.js"></script>
-          <script src="https://cdn.rawgit.com/zynga/scroller/master/src/Scroller.js"></script>
           <script src={this.props.files['main.js']}></script>
         </body>
       </html>
     );
-  },
+  }
 
   _renderPage() {
     switch (this.props.location) {
@@ -92,7 +85,7 @@ var IndexPage = createReactClass({
         return <HomePage />;
     }
 
-    var activeDocsPage = getPageForLocation(DocsPages, this.props.location);
+    const activeDocsPage = getPageForLocation(DocsPages, this.props.location);
     if (activeDocsPage) {
       return (
         <DocsPage
@@ -102,7 +95,7 @@ var IndexPage = createReactClass({
       );
     }
 
-    var activeExamplePage = getPageForLocation(ExamplePages, this.props.location);
+    const activeExamplePage = getPageForLocation(ExamplePages, this.props.location);
     if (activeExamplePage) {
       return (
         <ExamplesPage
@@ -117,7 +110,7 @@ var IndexPage = createReactClass({
         JSON.stringify(this.props.location) +
         ' not found.'
     );
-  },
+  }
 
   componentDidMount() {
     if (!this.state.renderPage) {
@@ -126,6 +119,6 @@ var IndexPage = createReactClass({
       });
     }
   }
-});
+}
 
 module.exports = IndexPage;

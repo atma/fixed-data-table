@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -12,10 +12,10 @@
 
 'use strict';
 
-var IntegerBufferSet = require('IntegerBufferSet');
+import IntegerBufferSet from 'IntegerBufferSet';
 
-var clamp = require('clamp');
-var invariant = require('invariant');
+import clamp from 'clamp';
+import invariant from 'invariant';
 var MIN_BUFFER_ROWS = 3;
 var MAX_BUFFER_ROWS = 6;
 
@@ -27,7 +27,8 @@ class FixedDataTableRowBuffer {
     /*number*/ rowsCount,
     /*number*/  defaultRowHeight,
     /*number*/ viewportHeight,
-    /*?function*/ rowHeightGetter
+    /*?function*/ rowHeightGetter,
+    /*?number*/ bufferRowCount
   ) {
     invariant(
       defaultRowHeight !== 0,
@@ -39,11 +40,13 @@ class FixedDataTableRowBuffer {
     this._viewportRowsBegin = 0;
     this._viewportRowsEnd = 0;
     this._maxVisibleRowCount = Math.ceil(viewportHeight / defaultRowHeight) + 1;
-    this._bufferRowsCount = clamp(
-      Math.floor(this._maxVisibleRowCount/2),
-      MIN_BUFFER_ROWS,
-      MAX_BUFFER_ROWS
-    );
+    this._bufferRowsCount = bufferRowCount != null
+      ? bufferRowCount
+      : clamp(
+        Math.floor(this._maxVisibleRowCount/2),
+        MIN_BUFFER_ROWS,
+        MAX_BUFFER_ROWS
+      );
     this._rowsCount = rowsCount;
     this._rowHeightGetter = rowHeightGetter;
     this._rows = [];

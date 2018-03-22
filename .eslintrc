@@ -1,0 +1,10 @@
+{
+  "extends": "bragi",
+  "rules": {
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": "off",
+    "comma-dangle": ["error", {
+      "functions": "ignore"
+    }]
+  }
+}

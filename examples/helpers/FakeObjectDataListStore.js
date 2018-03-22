@@ -1,24 +1,16 @@
 /**
- * This file provided by Facebook is for non-commercial testing and evaluation
- * purposes only. Facebook reserves all rights not expressly granted.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * Copyright Mercado Libre
  */
 
-var faker = require('faker');
+const faker = require('faker');
 
 class FakeObjectDataListStore {
-  constructor(/*number*/ size){
+  constructor(size) {
     this.size = size || 2000;
     this._cache = [];
   }
 
-  createFakeRowObjectData(/*number*/ index) /*object*/ {
+  createFakeRowObjectData(index) {
     return {
       id: index,
       avatar: faker.image.avatar(),
@@ -37,13 +29,15 @@ class FakeObjectDataListStore {
     };
   }
 
-  getObjectAt(/*number*/ index) /*?object*/ {
-    if (index < 0 || index > this.size){
+  getObjectAt(index) {
+    if (index < 0 || index > this.size) {
       return undefined;
     }
+
     if (this._cache[index] === undefined) {
       this._cache[index] = this.createFakeRowObjectData(index);
     }
+
     return this._cache[index];
   }
 
@@ -54,10 +48,11 @@ class FakeObjectDataListStore {
   */
   getAll() {
     if (this._cache.length < this.size) {
-      for (var i = 0; i < this.size; i++) {
+      for (let i = 0; i < this.size; i++) {
         this.getObjectAt(i);
       }
     }
+
     return this._cache.slice();
   }
 

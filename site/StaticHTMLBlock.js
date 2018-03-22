@@ -1,17 +1,17 @@
 "use strict";
 
 var React = require('react');
-var createReactClass = require('create-react-class');
+
 var PropTypes = require('prop-types');
 
-var StaticHTMLBlock = createReactClass({
-  propTypes: {
+class StaticHTMLBlock extends React.Component {
+  static propType = {
     html: PropTypes.string.isRequired
-  },
+  };
 
   shouldComponentUpdate() {
     return false;
-  },
+  }
 
   render() {
     var {html, ...props} = this.props;
@@ -21,7 +21,7 @@ var StaticHTMLBlock = createReactClass({
         {...props}
       />
     );
-  },
-});
+  }
+};
 
 module.exports = StaticHTMLBlock;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -10,11 +10,9 @@
  * @typechecks
  */
 
-'use strict';
+import Heap from 'Heap';
 
-var Heap = require('Heap');
-
-var invariant = require('invariant');
+import invariant from 'invariant';
 
 // Data structure that allows to store values and assign positions to them
 // in a way to minimize changing positions of stored values when new ones are
@@ -47,18 +45,18 @@ class IntegerBufferSet {
       this.replaceFurthestValuePosition.bind(this);
   }
 
-  getSize() /*number*/ {
+  getSize() {
     return this._size;
   }
 
-  getValuePosition(/*number*/ value) /*?number*/ {
+  getValuePosition(value) {
     if (this._valueToPositionMap[value] === undefined) {
       return null;
     }
     return this._valueToPositionMap[value];
   }
 
-  getNewPositionForValue(/*number*/ value) /*number*/ {
+  getNewPositionForValue(value) {
     invariant(
       this._valueToPositionMap[value] === undefined,
       "Shouldn't try to find new position for value already stored in BufferSet"
@@ -71,14 +69,13 @@ class IntegerBufferSet {
   }
 
   replaceFurthestValuePosition(
-    /*number*/ lowValue,
-    /*number*/ highValue,
-    /*number*/ newValue
-  ) /*?number*/ {
+    lowValue,
+    highValue,
+    newValue) {
     invariant(
       this._valueToPositionMap[newValue] === undefined,
       "Shouldn't try to replace values with value already stored value in " +
-      "BufferSet"
+      'BufferSet'
     );
 
     this._cleanHeaps();
@@ -112,7 +109,7 @@ class IntegerBufferSet {
     return position;
   }
 
-  _pushToHeaps(/*number*/ position, /*number*/ value) {
+  _pushToHeaps(position, value) {
     var element = {
       position,
       value,
@@ -162,21 +159,20 @@ class IntegerBufferSet {
     this._largeValues = newLargeValues;
   }
 
-  _cleanHeap(/*object*/ heap) {
+  _cleanHeap(heap) {
     while (!heap.empty() &&
         this._valueToPositionMap[heap.peek().value] === undefined) {
       heap.pop();
     }
   }
 
-  _smallerComparator(/*object*/ lhs, /*object*/ rhs) /*boolean*/ {
+  _smallerComparator(lhs, rhs) {
     return lhs.value < rhs.value;
   }
 
-  _greaterComparator(/*object*/ lhs, /*object*/ rhs) /*boolean*/ {
+  _greaterComparator(lhs, rhs) {
     return lhs.value > rhs.value;
   }
-
 }
 
 module.exports = IntegerBufferSet;

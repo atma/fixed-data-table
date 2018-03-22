@@ -1,23 +1,21 @@
 /**
- * This file provided by Facebook is for non-commercial testing and evaluation
- * purposes only. Facebook reserves all rights not expressly granted.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * Copyright Mercado Libre
  */
 
 "use strict";
 
 var React = require('react');
-var createReactClass = require('create-react-class');
 var Constants = require('../Constants');
 
-var ExampleHeader = createReactClass({
+class ExampleHeader extends React.Component {
   render() {
+    const contextDisclamer = this.props.page.fileName === 'ContextExample.js' ? (
+      <div>
+        NOTE React discourages using context.  Prefer the other filtering and paging examples if possible. See
+        <a key='docs' href='https://facebook.github.io/react/docs/context.html'> React Context documentation</a>
+      </div>
+    ) : null;
+
     return (
       <div className="exampleHeader">
         <div className="exampleControls">
@@ -33,9 +31,10 @@ var ExampleHeader = createReactClass({
           <a className="exampleCode" href={this.props.page.file}>Example code</a>
           {this.props.page.description}
         </p>
+        {contextDisclamer}
       </div>
     );
   }
-});
+}
 
 module.exports = ExampleHeader;

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -10,10 +10,10 @@
  * @typechecks
  */
 
-var ExecutionEnvironment = require('ExecutionEnvironment');
+import ExecutionEnvironment from 'ExecutionEnvironment';
 
-var camelize = require('camelize');
-var invariant = require('invariant');
+import camelize from 'camelize';
+import invariant from 'invariant';
 
 var memoized = {};
 var prefixes = ['Webkit', 'ms', 'Moz', 'O'];

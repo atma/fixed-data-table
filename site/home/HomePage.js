@@ -4,11 +4,10 @@ require('./homePageStyle.less');
 
 var Header = require('./Header');
 var React = require('react');
-var createReactClass = require('create-react-class');
 var ReadMeHTML = require('../../README.md');
 var StaticHTMLBlock = require('../StaticHTMLBlock');
 
-var HomePage = createReactClass({
+class HomePage extends React.Component {
   render() {
     return (
       <div className="homePage">
@@ -22,6 +21,6 @@ var HomePage = createReactClass({
       </div>
     );
   }
-});
+};
 
 module.exports = HomePage;

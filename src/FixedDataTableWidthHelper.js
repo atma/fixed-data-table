@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015, Facebook, Inc.
+ * Copyright Mercado Libre
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -12,7 +12,7 @@
 
 'use strict';
 
-var React = require('React');
+import React from 'React';
 
 function getTotalWidth(/*array*/ columns) /*number*/ {
   var totalWidth = 0;

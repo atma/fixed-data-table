@@ -1,29 +1,13 @@
 /**
- * This file provided by Facebook is for non-commercial testing and evaluation
- * purposes only. Facebook reserves all rights not expressly granted.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
- * FACEBOOK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
- * ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
- * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * Copyright Mercado Libre
  */
 
 "use strict";
 
-var ExampleImage = require('./helpers/ExampleImage');
-var FakeObjectDataListStore = require('./helpers/FakeObjectDataListStore');
-var FixedDataTable = require('fixed-data-table');
-var React = require('react');
-
-const {Table, Column, ColumnGroup, Cell} = FixedDataTable;
-
-const TextCell = ({rowIndex, data, col, ...props}) => (
-  <Cell {...props}>
-    {data.getObjectAt(rowIndex)[col]}
-  </Cell>
-);
+const FakeObjectDataListStore = require('./helpers/FakeObjectDataListStore');
+const { TextCell } = require('./helpers/cells');
+const { Table, Column, ColumnGroup, Cell } = require('frontend-datatable');
+const React = require('react');
 
 class ColumnGroupsExample extends React.Component {
   constructor(props) {
@@ -35,7 +19,7 @@ class ColumnGroupsExample extends React.Component {
   }
 
   render() {
-    var {dataList} = this.state;
+    const { dataList } = this.state;
 
     return (
       <Table
@@ -50,29 +34,33 @@ class ColumnGroupsExample extends React.Component {
           fixed={true}
           header={<Cell>Name</Cell>}>
           <Column
+            columnKey="firstName"
             fixed={true}
             header={<Cell>First Name</Cell>}
-            cell={<TextCell data={dataList} col="firstName" />}
+            cell={<TextCell data={dataList} />}
             width={150}
           />
           <Column
+            columnKey="lastName"
             fixed={true}
             header={<Cell>Last Name</Cell>}
-            cell={<TextCell data={dataList} col="lastName" />}
+            cell={<TextCell data={dataList} />}
             width={150}
           />
         </ColumnGroup>
         <ColumnGroup
           header={<Cell>About</Cell>}>
           <Column
+            columnKey="companyName"
             header={<Cell>Company</Cell>}
-            cell={<TextCell data={dataList} col="companyName" />}
+            cell={<TextCell data={dataList} />}
             flexGrow={1}
             width={150}
           />
           <Column
+            columnKey="sentence"
             header={<Cell>Sentence</Cell>}
-            cell={<TextCell data={dataList} col="sentence" />}
+            cell={<TextCell data={dataList} />}
             flexGrow={1}
             width={150}
           />
