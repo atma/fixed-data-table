@@ -639,7 +639,7 @@ class FixedDataTable extends Component {
           height={state.groupHeaderHeight}
           cellGroupWrapperHeight={state.cellGroupWrapperHeight}
           index={0}
-          zIndex={1}
+          zIndex={5}
           offsetTop={0}
           scrollLeft={state.scrollX}
           fixedColumns={state.groupHeaderFixedColumns}
@@ -731,7 +731,7 @@ class FixedDataTable extends Component {
           width={state.width}
           height={state.footerHeight}
           index={-1}
-          zIndex={1}
+          zIndex={10}
           offsetTop={footOffsetTop}
           fixedColumns={state.footFixedColumns}
           fixedRightColumns={state.footFixedRightColumns}
@@ -755,7 +755,7 @@ class FixedDataTable extends Component {
         height={state.headerHeight}
         cellGroupWrapperHeight={state.cellGroupWrapperHeight}
         index={-1}
-        zIndex={1}
+        zIndex={10}
         offsetTop={headerOffsetTop}
         scrollLeft={state.scrollX}
         fixedColumns={state.headFixedColumns}

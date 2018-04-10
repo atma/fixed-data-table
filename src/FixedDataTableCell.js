@@ -221,7 +221,7 @@ class FixedDataTableCell extends Component {
 
     if (this.state.isReorderingThisColumn) {
       style.transform = `translateX(${this.state.displacement}px) translateZ(0)`;
-      style.zIndex = 1;
+      style.zIndex = 10;
     }
 
     var className = joinClasses(

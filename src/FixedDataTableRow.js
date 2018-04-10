@@ -170,7 +170,7 @@ class FixedDataTableRowImpl extends React.Component {
         cellGroupWrapperHeight={this.props.cellGroupWrapperHeight}
         left={0}
         width={fixedColumnsWidth}
-        zIndex={2}
+        zIndex={5}
         columns={this.props.fixedColumns}
         touchEnabled={this.props.touchEnabled}
         onColumnResize={this.props.onColumnResize}
@@ -193,7 +193,7 @@ class FixedDataTableRowImpl extends React.Component {
         cellGroupWrapperHeight={this.props.cellGroupWrapperHeight}
         offsetLeft={this.props.width - fixedRightColumnsWidth - scrollbarOffset}
         width={fixedRightColumnsWidth}
-        zIndex={2}
+        zIndex={5}
         columns={this.props.fixedRightColumns}
         touchEnabled={this.props.touchEnabled}
         onColumnResize={this.props.onColumnResize}
@@ -217,7 +217,7 @@ class FixedDataTableRowImpl extends React.Component {
         left={this.props.scrollLeft}
         offsetLeft={fixedColumnsWidth}
         width={this.props.width - fixedColumnsWidth - fixedRightColumnsWidth - scrollbarOffset}
-        zIndex={0}
+        zIndex={2}
         columns={this.props.scrollableColumns}
         touchEnabled={this.props.touchEnabled}
         onColumnResize={this.props.onColumnResize}
@@ -450,7 +450,7 @@ class FixedDataTableRow extends React.Component {
     var style = {
       width: this.props.width,
       height: this.props.height,
-      zIndex: (this.props.zIndex ? this.props.zIndex : 0),
+      zIndex: (this.props.zIndex ? this.props.zIndex : 2),
     };
     FixedDataTableTranslateDOMPosition(style, 0, this.props.offsetTop, this._initialRender);
 
