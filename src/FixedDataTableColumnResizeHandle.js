@@ -14,7 +14,7 @@
  * @typechecks
  */
 
-import React, { PureComponent } from 'React';
+import React, { PureComponent } from 'react';
 import DOMMouseMoveTracker from 'DOMMouseMoveTracker';
 import Locale from 'Locale';
 import PropTypes from 'prop-types';

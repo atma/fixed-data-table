@@ -10,7 +10,7 @@
  * @typechecks
  */
 
-import React, { Component } from 'React';
+import React, { Component } from 'react';
 import FixedDataTableCellDefault from 'FixedDataTableCellDefault';
 import FixedDataTableColumnReorderHandle from './FixedDataTableColumnReorderHandle';
 import FixedDataTableHelper from 'FixedDataTableHelper';

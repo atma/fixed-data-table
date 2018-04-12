@@ -12,8 +12,8 @@
 
 'use strict';
 
+import React from 'react';
 import Locale from 'Locale';
-import React from 'React';
 import FixedDataTableColumnGroup from 'FixedDataTableColumnGroup';
 import FixedDataTableColumn from 'FixedDataTableColumn';
 

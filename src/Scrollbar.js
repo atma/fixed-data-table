@@ -10,8 +10,8 @@
  * @typechecks
  */
 
-import React, { PureComponent } from 'React';
-import ReactDOM from 'ReactDOM';
+import React, { PureComponent } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import DOMMouseMoveTracker from 'DOMMouseMoveTracker';
 import Keys from 'Keys';

@@ -13,7 +13,7 @@
 
 /*eslint no-bitwise:1*/
 
-import React, { Component, PureComponent, Children } from 'React';
+import React, { Component, PureComponent, Children } from 'react';
 import PropTypes from 'prop-types';
 import ReactWheelHandler from 'ReactWheelHandler';
 import ReactTouchHandler from 'ReactTouchHandler';
