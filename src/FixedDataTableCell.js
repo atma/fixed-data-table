@@ -10,13 +10,12 @@
  * @typechecks
  */
 
-import React, { Component } from 'React';
+import React, { Component } from 'react';
 import FixedDataTableCellDefault from 'FixedDataTableCellDefault';
 import FixedDataTableColumnReorderHandle from './FixedDataTableColumnReorderHandle';
 import FixedDataTableHelper from 'FixedDataTableHelper';
 import PropTypes from 'prop-types';
-import cx from 'cx';
-import joinClasses from 'joinClasses';
+import classNames from 'classnames';
 import shallowEqual from 'shallowEqual';
 
 const DIR_SIGN = FixedDataTableHelper.DIR_SIGN;
@@ -221,21 +220,21 @@ class FixedDataTableCell extends Component {
 
     if (this.state.isReorderingThisColumn) {
       style.transform = `translateX(${this.state.displacement}px) translateZ(0)`;
-      style.zIndex = 1;
+      style.zIndex = 10;
     }
 
-    var className = joinClasses(
-      cx({
-        'fixedDataTableCellLayout/main': true,
-        'fixedDataTableCellLayout/lastChild': props.lastChild,
-        'fixedDataTableCellLayout/alignRight': props.align === 'right',
-        'fixedDataTableCellLayout/alignCenter': props.align === 'center',
-        'public/fixedDataTableCell/alignRight': props.align === 'right',
-        'public/fixedDataTableCell/highlighted': props.highlighted,
-        'public/fixedDataTableCell/main': true,
-        'public/fixedDataTableCell/hasReorderHandle': !!props.onColumnReorder,
-        'public/fixedDataTableCell/reordering': this.state.isReorderingThisColumn,
-      }),
+    var className = classNames(
+      {
+        'fixedDataTableCellLayout_main': true,
+        'fixedDataTableCellLayout_lastChild': props.lastChild,
+        'fixedDataTableCellLayout_alignRight': props.align === 'right',
+        'fixedDataTableCellLayout_alignCenter': props.align === 'center',
+        'public_fixedDataTableCell_alignRight': props.align === 'right',
+        'public_fixedDataTableCell_highlighted': props.highlighted,
+        'public_fixedDataTableCell_main': true,
+        'public_fixedDataTableCell_hasReorderHandle': !!props.onColumnReorder,
+        'public_fixedDataTableCell_reordering': this.state.isReorderingThisColumn,
+      },
       props.className,
     );
 
@@ -250,16 +249,16 @@ class FixedDataTableCell extends Component {
       };
       columnResizerComponent = (
         <div
-          className={cx('fixedDataTableCellLayout/columnResizerContainer')}
+          className={classNames('fixedDataTableCellLayout_columnResizerContainer')}
           style={columnResizerStyle}
           onMouseDown={this._onColumnResizerMouseDown}
           onTouchStart={this.props.touchEnabled ? this._onColumnResizerMouseDown : null}
           onTouchEnd={this.props.touchEnabled ? suppress : null}
           onTouchMove={this.props.touchEnabled ? suppress : null}>
           <div
-            className={joinClasses(
-              cx('fixedDataTableCellLayout/columnResizerKnob'),
-              cx('public/fixedDataTableCell/columnResizerKnob'),
+            className={classNames(
+              'fixedDataTableCellLayout_columnResizerKnob',
+              'public_fixedDataTableCell_columnResizerKnob',
             )}
             style={columnResizerStyle}
           />

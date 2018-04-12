@@ -8,6 +8,7 @@
     "react-dom": ">=15.2.0 || >=16.2.0"
   },
   "dependencies": {
+    "classnames": "^2.2.0",
     "prop-types": "^15.6.1"
   },
   "devDependencies": {

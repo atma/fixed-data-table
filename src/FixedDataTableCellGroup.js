@@ -12,12 +12,12 @@
 
 'use strict';
 
-import React, { Component } from 'React';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FixedDataTableHelper from 'FixedDataTableHelper';
 import FixedDataTableCell from 'FixedDataTableCell';
 
-import cx from 'cx';
+import classNames from 'classnames';
 import FixedDataTableTranslateDOMPosition from 'FixedDataTableTranslateDOMPosition';
 
 const DIR_SIGN = FixedDataTableHelper.DIR_SIGN;
@@ -111,7 +111,7 @@ class FixedDataTableCellGroupImpl extends Component {
 
     return (
       <div
-        className={cx('fixedDataTableCellGroupLayout/cellGroup')}
+        className={classNames('fixedDataTableCellGroupLayout_cellGroup')}
         style={style}>
         {cells}
       </div>
@@ -235,7 +235,7 @@ class FixedDataTableCellGroup extends Component {
     return (
       <div
         style={style}
-        className={cx('fixedDataTableCellGroupLayout/cellGroupWrapper')}>
+        className={classNames('fixedDataTableCellGroupLayout_cellGroupWrapper')}>
         <FixedDataTableCellGroupImpl
           {...props}
           onColumnResize={onColumnResize}

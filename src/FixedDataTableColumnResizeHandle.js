@@ -14,14 +14,13 @@
  * @typechecks
  */
 
-import React, { PureComponent } from 'React';
+import React, { PureComponent } from 'react';
 import DOMMouseMoveTracker from 'DOMMouseMoveTracker';
 import Locale from 'Locale';
 import PropTypes from 'prop-types';
-import ReactComponentWithPureRenderMixin from 'ReactComponentWithPureRenderMixin';
 
 import clamp from 'clamp';
-import cx from 'cx';
+import classNames from 'classnames';
 
 class FixedDataTableColumnResizeHandle extends PureComponent {
   static propTypes = {
@@ -133,14 +132,14 @@ class FixedDataTableColumnResizeHandle extends PureComponent {
     }
     return (
       <div
-        className={cx({
-          'fixedDataTableColumnResizerLineLayout/main': true,
-          'fixedDataTableColumnResizerLineLayout/hiddenElem': !this.props.visible,
-          'public/fixedDataTableColumnResizerLine/main': true,
+        className={classNames({
+          'fixedDataTableColumnResizerLineLayout_main': true,
+          'fixedDataTableColumnResizerLineLayout_hiddenElem': !this.props.visible,
+          'public_fixedDataTableColumnResizerLine_main': true,
         })}
         style={style}>
         <div
-          className={cx('fixedDataTableColumnResizerLineLayout/mouseArea')}
+          className={classNames('fixedDataTableColumnResizerLineLayout_mouseArea')}
           style={{height: this.props.height}}
         />
       </div>

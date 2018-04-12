@@ -13,7 +13,7 @@
 
 /*eslint no-bitwise:1*/
 
-import React, { Component, PureComponent, Children } from 'React';
+import React, { Component, PureComponent, Children } from 'react';
 import PropTypes from 'prop-types';
 import ReactWheelHandler from 'ReactWheelHandler';
 import ReactTouchHandler from 'ReactTouchHandler';
@@ -25,11 +25,10 @@ import FixedDataTableScrollHelper from 'FixedDataTableScrollHelper';
 import FixedDataTableWidthHelper from 'FixedDataTableWidthHelper';
 import FixedDataTableEventHelper from 'FixedDataTableEventHelper';
 
-import cx from 'cx';
+import classNames from 'classnames';
 import debounceCore from 'debounceCore';
 import emptyFunction from 'emptyFunction';
 import invariant from 'invariant';
-import joinClasses from 'joinClasses';
 import shallowEqual from 'shallowEqual';
 import FixedDataTableTranslateDOMPosition from 'FixedDataTableTranslateDOMPosition';
 
@@ -631,15 +630,15 @@ class FixedDataTable extends Component {
         <FixedDataTableRow
           key="group_header"
           isScrolling={this._isScrolling}
-          className={joinClasses(
-            cx('fixedDataTableLayout/header'),
-            cx('public/fixedDataTable/header'),
+          className={classNames(
+            'fixedDataTableLayout_header',
+            'public_fixedDataTable_header'
           )}
           width={state.width}
           height={state.groupHeaderHeight}
           cellGroupWrapperHeight={state.cellGroupWrapperHeight}
           index={0}
-          zIndex={1}
+          zIndex={5}
           offsetTop={0}
           scrollLeft={state.scrollX}
           fixedColumns={state.groupHeaderFixedColumns}
@@ -724,14 +723,14 @@ class FixedDataTable extends Component {
         <FixedDataTableRow
           key="footer"
           isScrolling={this._isScrolling}
-          className={joinClasses(
-            cx('fixedDataTableLayout/footer'),
-            cx('public/fixedDataTable/footer'),
+          className={classNames(
+            'fixedDataTableLayout_footer',
+            'public_fixedDataTable_footer',
           )}
           width={state.width}
           height={state.footerHeight}
           index={-1}
-          zIndex={1}
+          zIndex={10}
           offsetTop={footOffsetTop}
           fixedColumns={state.footFixedColumns}
           fixedRightColumns={state.footFixedRightColumns}
@@ -747,15 +746,15 @@ class FixedDataTable extends Component {
       <FixedDataTableRow
         key="header"
         isScrolling={this._isScrolling}
-        className={joinClasses(
-          cx('fixedDataTableLayout/header'),
-          cx('public/fixedDataTable/header'),
+        className={classNames(
+          'fixedDataTableLayout_header',
+          'public_fixedDataTable_header',
         )}
         width={state.width}
         height={state.headerHeight}
         cellGroupWrapperHeight={state.cellGroupWrapperHeight}
         index={-1}
-        zIndex={1}
+        zIndex={10}
         offsetTop={headerOffsetTop}
         scrollLeft={state.scrollX}
         fixedColumns={state.headFixedColumns}
@@ -776,11 +775,11 @@ class FixedDataTable extends Component {
     if (state.scrollY) {
       topShadow =
         <div
-          className={joinClasses(
-            cx('fixedDataTableLayout/topShadow'),
-            cx('public/fixedDataTable/topShadow'),
+          className={classNames(
+            'fixedDataTableLayout_topShadow',
+            'public_fixedDataTable_topShadow',
           )}
-          style={{top: bodyOffsetTop}}
+          style={{ top: bodyOffsetTop }}
         />;
     }
 
@@ -792,9 +791,9 @@ class FixedDataTable extends Component {
     ) {
       bottomShadow =
         <div
-          className={joinClasses(
-            cx('fixedDataTableLayout/bottomShadow'),
-            cx('public/fixedDataTable/bottomShadow'),
+          className={classNames(
+            'fixedDataTableLayout_bottomShadow',
+            'public_fixedDataTable_bottomShadow',
           )}
           style={{top: footOffsetTop}}
         />;
@@ -802,10 +801,10 @@ class FixedDataTable extends Component {
 
     return (
       <div
-        className={joinClasses(
+        className={classNames(
           this.state.className,
-          cx('fixedDataTableLayout/main'),
-          cx('public/fixedDataTable/main'),
+          'fixedDataTableLayout_main',
+          'public_fixedDataTable_main',
         )}
         tabIndex={0}
         onKeyDown={this._onKeyDown}
@@ -816,7 +815,7 @@ class FixedDataTable extends Component {
         onTouchCancel={this._touchHandler.onTouchCancel}
         style={{height: state.height, width: state.width}}>
         <div
-          className={cx('fixedDataTableLayout/rowsContainer')}
+          className={classNames('fixedDataTableLayout_rowsContainer')}
           style={{height: rowsContainerHeight, width: state.width}}>
           {dragKnob}
           {groupHeader}
@@ -1553,9 +1552,9 @@ class HorizontalScrollbar extends PureComponent {
 
     return (
       <div
-        className={joinClasses(
-          cx('fixedDataTableLayout/horizontalScrollbar'),
-          cx('public/fixedDataTable/horizontalScrollbar'),
+        className={classNames(
+          'fixedDataTableLayout_horizontalScrollbar',
+          'public_fixedDataTable_horizontalScrollbar',
         )}
         style={outerContainerStyle}>
         <div style={innerContainerStyle}>

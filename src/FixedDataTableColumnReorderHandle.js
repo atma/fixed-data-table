@@ -13,14 +13,14 @@
  * @typechecks
  */
 
-import React, { PureComponent } from 'React';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import DOMMouseMoveTracker from 'DOMMouseMoveTracker';
 import Locale from 'Locale';
 import FixedDataTableEventHelper from 'FixedDataTableEventHelper';
 
 import clamp from 'clamp';
-import cx from 'cx';
+import classNames from 'classnames';
 
 class FixedDataTableColumnReorderHandle extends PureComponent {
   static propTypes = {
@@ -75,9 +75,9 @@ class FixedDataTableColumnReorderHandle extends PureComponent {
     };
     return (
       <div
-        className={cx({
-          'fixedDataTableCellLayout/columnReorderContainer': true,
-          'fixedDataTableCellLayout/columnReorderContainer/active': false,
+        className={classNames({
+          'fixedDataTableCellLayout_columnReorderContainer': true,
+          'fixedDataTableCellLayout_columnReorderContainer_active': false,
         })}
         onMouseDown={this.onMouseDown}
         onTouchStart={this.props.touchEnabled ? this.onMouseDown : null}

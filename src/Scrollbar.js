@@ -10,15 +10,15 @@
  * @typechecks
  */
 
-import React, { PureComponent } from 'React';
-import ReactDOM from 'ReactDOM';
+import React, { PureComponent } from 'react';
+import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import DOMMouseMoveTracker from 'DOMMouseMoveTracker';
 import Keys from 'Keys';
 import ReactWheelHandler from 'ReactWheelHandler';
 
 import cssVar from 'cssVar';
-import cx from 'cx';
+import classNames from 'classnames';
 import emptyFunction from 'emptyFunction';
 import FixedDataTableTranslateDOMPosition from 'FixedDataTableTranslateDOMPosition';
 
@@ -115,21 +115,21 @@ class Scrollbar extends PureComponent {
     var isOpaque = this.props.isOpaque;
     var verticalTop = this.props.verticalTop || 0;
 
-    var mainClassName = cx({
-      'ScrollbarLayout/main': true,
-      'ScrollbarLayout/mainVertical': isVertical,
-      'ScrollbarLayout/mainHorizontal': isHorizontal,
-      'public/Scrollbar/main': true,
-      'public/Scrollbar/mainOpaque': isOpaque,
-      'public/Scrollbar/mainActive': isActive,
+    var mainClassName = classNames({
+      'ScrollbarLayout_main': true,
+      'ScrollbarLayout_mainVertical': isVertical,
+      'ScrollbarLayout_mainHorizontal': isHorizontal,
+      'public_Scrollbar_main': true,
+      'public_Scrollbar_mainOpaque': isOpaque,
+      'public_Scrollbar_mainActive': isActive,
     });
 
-    var faceClassName = cx({
-      'ScrollbarLayout/face': true,
-      'ScrollbarLayout/faceHorizontal': isHorizontal,
-      'ScrollbarLayout/faceVertical': isVertical,
-      'public/Scrollbar/faceActive': isActive,
-      'public/Scrollbar/face': true,
+    var faceClassName = classNames({
+      'ScrollbarLayout_face': true,
+      'ScrollbarLayout_faceHorizontal': isHorizontal,
+      'ScrollbarLayout_faceVertical': isVertical,
+      'public_Scrollbar_faceActive': isActive,
+      'public_Scrollbar_face': true,
     });
 
     var position = this.state.position * this.state.scale + FACE_MARGIN;
@@ -283,7 +283,7 @@ class Scrollbar extends PureComponent {
       false;
 
     // This function should only return flat values that can be compared quiclky
-    // by `ReactComponentWithPureRenderMixin`.
+    // by `React.PureComponent`.
     var state = {
       faceSize,
       isDragging,
