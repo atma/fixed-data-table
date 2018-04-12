@@ -18,7 +18,6 @@ import React, { PureComponent } from 'React';
 import DOMMouseMoveTracker from 'DOMMouseMoveTracker';
 import Locale from 'Locale';
 import PropTypes from 'prop-types';
-import ReactComponentWithPureRenderMixin from 'ReactComponentWithPureRenderMixin';
 
 import clamp from 'clamp';
 import cx from 'cx';

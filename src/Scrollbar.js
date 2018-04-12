@@ -283,7 +283,7 @@ class Scrollbar extends PureComponent {
       false;
 
     // This function should only return flat values that can be compared quiclky
-    // by `ReactComponentWithPureRenderMixin`.
+    // by `React.PureComponent`.
     var state = {
       faceSize,
       isDragging,
