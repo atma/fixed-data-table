@@ -84,25 +84,13 @@ class FixedDataTableCellDefault extends React.Component {
       <div
         {...props}
         className={classNames(
-          'fixedDataTableCellLayout_wrap1',
-          'public_fixedDataTableCell_wrap1',
+          'fixedDataTableCellLayout_wrap',
+          'public_fixedDataTableCell_wrap',
           className,
         )}
         style={innerStyle}>
-        <div
-          className={classNames(
-            'fixedDataTableCellLayout_wrap2',
-            'public_fixedDataTableCell_wrap2',
-          )}>
-          <div
-            className={classNames(
-              'fixedDataTableCellLayout_wrap3',
-              'public_fixedDataTableCell_wrap3',
-            )}>
-            <div className={classNames('public_fixedDataTableCell_cellContent')}>
-              {children}
-            </div>
-          </div>
+        <div className={classNames('public_fixedDataTableCell_cellContent')}>
+          {children}
         </div>
       </div>
     );
