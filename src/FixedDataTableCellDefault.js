@@ -11,11 +11,8 @@
  */
 
 import React from 'React';
-
 import PropTypes from 'prop-types';
-
-import cx from 'cx';
-import joinClasses from 'joinClasses';
+import classNames from 'classnames';
 
 /**
  * Component that handles default cell layout and styling.
@@ -86,23 +83,23 @@ class FixedDataTableCellDefault extends React.Component {
     return (
       <div
         {...props}
-        className={joinClasses(
-          cx('fixedDataTableCellLayout/wrap1'),
-          cx('public/fixedDataTableCell/wrap1'),
+        className={classNames(
+          'fixedDataTableCellLayout_wrap1',
+          'public_fixedDataTableCell_wrap1',
           className,
         )}
         style={innerStyle}>
         <div
-          className={joinClasses(
-            cx('fixedDataTableCellLayout/wrap2'),
-            cx('public/fixedDataTableCell/wrap2'),
+          className={classNames(
+            'fixedDataTableCellLayout_wrap2',
+            'public_fixedDataTableCell_wrap2',
           )}>
           <div
-            className={joinClasses(
-              cx('fixedDataTableCellLayout/wrap3'),
-              cx('public/fixedDataTableCell/wrap3'),
+            className={classNames(
+              'fixedDataTableCellLayout_wrap3',
+              'public_fixedDataTableCell_wrap3',
             )}>
-            <div className={cx('public/fixedDataTableCell/cellContent')}>
+            <div className={classNames('public_fixedDataTableCell_cellContent')}>
               {children}
             </div>
           </div>

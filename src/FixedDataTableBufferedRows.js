@@ -15,9 +15,8 @@ import PropTypes from 'prop-types';
 import FixedDataTableRowBuffer from 'FixedDataTableRowBuffer';
 import FixedDataTableRow from 'FixedDataTableRow';
 
-import cx from 'cx';
+import classNames from 'classnames';
 import emptyFunction from 'emptyFunction';
-import joinClasses from 'joinClasses';
 
 class FixedDataTableBufferedRows extends Component {
   static propTypes = {
@@ -189,13 +188,13 @@ class FixedDataTableBufferedRows extends Component {
           onTouchEnd={props.onRowTouchEnd}
           onTouchMove={props.onRowTouchMove}
           showScrollbarY={props.showScrollbarY}
-          className={joinClasses(
+          className={classNames(
             rowClassNameGetter(rowIndex),
-            cx('public/fixedDataTable/bodyRow'),
-            cx({
-              'fixedDataTableLayout/hasBottomBorder': hasBottomBorder,
-              'public/fixedDataTable/hasBottomBorder': hasBottomBorder,
-            })
+            'public_fixedDataTable_bodyRow',
+            {
+              'fixedDataTableLayout_hasBottomBorder': hasBottomBorder,
+              'public_fixedDataTable_hasBottomBorder': hasBottomBorder,
+            }
           )}
         />;
     }

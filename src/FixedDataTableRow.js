@@ -17,8 +17,7 @@ import PropTypes from 'prop-types';
 import FixedDataTableCellGroup from 'FixedDataTableCellGroup';
 import Scrollbar from 'Scrollbar';
 
-import cx from 'cx';
-import joinClasses from 'joinClasses';
+import classNames from 'classnames';
 import FixedDataTableTranslateDOMPosition from 'FixedDataTableTranslateDOMPosition';
 
 // .fixedDataTableLayout/header border-bottom-width
@@ -154,12 +153,12 @@ class FixedDataTableRowImpl extends React.Component {
       width: this.props.width,
       height: this.props.height + subRowHeight,
     };
-    var className = cx({
-      'fixedDataTableRowLayout/main': true,
-      'public/fixedDataTableRow/main': true,
-      'public/fixedDataTableRow/highlighted': (this.props.index % 2 === 1),
-      'public/fixedDataTableRow/odd': (this.props.index % 2 === 1),
-      'public/fixedDataTableRow/even': (this.props.index % 2 === 0),
+    var className = classNames({
+      'fixedDataTableRowLayout_main': true,
+      'public_fixedDataTableRow_main': true,
+      'public_fixedDataTableRow_highlighted': (this.props.index % 2 === 1),
+      'public_fixedDataTableRow_odd': (this.props.index % 2 === 1),
+      'public_fixedDataTableRow_even': (this.props.index % 2 === 0),
     });
     var fixedColumnsWidth = this._getColumnsWidth(this.props.fixedColumns);
     var fixedColumns =
@@ -248,13 +247,13 @@ class FixedDataTableRowImpl extends React.Component {
       scrollbarSpacer =
         <div
           style={spacerStyles}
-          className={cx('public/fixedDataTable/scrollbarSpacer')}
+          className={classNames('public_fixedDataTable_scrollbarSpacer')}
         />;
     }
 
     return (
       <div
-        className={joinClasses(className, this.props.className)}
+        className={classNames(className, this.props.className)}
         onClick={this.props.onClick ? this._onClick : null}
         onDoubleClick={this.props.onDoubleClick ? this._onDoubleClick : null}
         onContextMenu={this.props.onContextMenu ? this._onContextMenu : null}
@@ -266,7 +265,7 @@ class FixedDataTableRowImpl extends React.Component {
         onTouchEnd={this.props.onTouchEnd ? this._onTouchEnd : null}
         onTouchMove={this.props.onTouchMove ? this._onTouchMove : null}
         style={style}>
-        <div className={cx('fixedDataTableRowLayout/body')}>
+        <div className={classNames('fixedDataTableRowLayout_body')}>
           {fixedColumns}
           {scrollableColumns}
           {columnsLeftShadow}
@@ -275,7 +274,7 @@ class FixedDataTableRowImpl extends React.Component {
           {scrollbarSpacer}
         </div>
         {rowExpanded && <div
-          className={cx('fixedDataTableRowLayout/rowExpanded')}
+          className={classNames('fixedDataTableRowLayout_rowExpanded')}
           style={rowExpandedStyle}>
           {rowExpanded}
         </div>}
@@ -312,11 +311,11 @@ class FixedDataTableRowImpl extends React.Component {
   }
 
   _renderColumnsLeftShadow = (/*number*/ left) => /*?object*/ {
-    var className = cx({
-      'fixedDataTableRowLayout/fixedColumnsDivider': left > 0,
-      'fixedDataTableRowLayout/columnsShadow': this.props.scrollLeft > 0,
-      'public/fixedDataTableRow/fixedColumnsDivider': left > 0,
-      'public/fixedDataTableRow/columnsShadow': this.props.scrollLeft > 0,
+    var className = classNames({
+      'fixedDataTableRowLayout_fixedColumnsDivider': left > 0,
+      'fixedDataTableRowLayout_columnsShadow': this.props.scrollLeft > 0,
+      'public_fixedDataTableRow_fixedColumnsDivider': left > 0,
+      'public_fixedDataTableRow_columnsShadow': this.props.scrollLeft > 0,
      });
      var dividerHeight = this.props.cellGroupWrapperHeight ?
        this.props.cellGroupWrapperHeight - HEADER_BORDER_BOTTOM_WIDTH : this.props.height;
@@ -328,13 +327,13 @@ class FixedDataTableRowImpl extends React.Component {
   };
 
   _renderFixedRightColumnsShadow = (/*number*/ left) => /*?object*/ {
-    var className = cx(
-      'fixedDataTableRowLayout/columnsShadow',
-      'fixedDataTableRowLayout/columnsRightShadow',
-      'fixedDataTableRowLayout/fixedColumnsDivider',
-      'public/fixedDataTableRow/columnsShadow',
-      'public/fixedDataTableRow/columnsRightShadow',
-      'public/fixedDataTableRow/fixedColumnsDivider'
+    var className = classNames(
+      'fixedDataTableRowLayout_columnsShadow',
+      'fixedDataTableRowLayout_columnsRightShadow',
+      'fixedDataTableRowLayout_fixedColumnsDivider',
+      'public_fixedDataTableRow_columnsShadow',
+      'public_fixedDataTableRow_columnsRightShadow',
+      'public_fixedDataTableRow_fixedColumnsDivider'
     );
     var style = {
       height: this.props.height,
@@ -345,11 +344,11 @@ class FixedDataTableRowImpl extends React.Component {
 
   _renderColumnsRightShadow = (/*number*/ totalWidth) => /*?object*/ {
     if (Math.ceil(this.props.scrollLeft + this.props.width) < Math.floor(totalWidth)) {
-      var className = cx(
-        'fixedDataTableRowLayout/columnsShadow',
-        'fixedDataTableRowLayout/columnsRightShadow',
-        'public/fixedDataTableRow/columnsShadow',
-        'public/fixedDataTableRow/columnsRightShadow'
+      var className = classNames(
+        'fixedDataTableRowLayout_columnsShadow',
+        'fixedDataTableRowLayout_columnsRightShadow',
+        'public_fixedDataTableRow_columnsShadow',
+        'public_fixedDataTableRow_columnsRightShadow'
       );
       var style = {
         height: this.props.height
@@ -457,7 +456,7 @@ class FixedDataTableRow extends React.Component {
     return (
       <div
         style={style}
-        className={cx('fixedDataTableRowLayout/rowWrapper')}>
+        className={classNames('fixedDataTableRowLayout_rowWrapper')}>
         <FixedDataTableRowImpl
           {...this.props}
           offsetTop={undefined}
