@@ -40,6 +40,7 @@ class FixedDataTableBufferedRows extends Component {
     onRowTouchEnd: PropTypes.func,
     onRowTouchMove: PropTypes.func,
     rowClassNameGetter: PropTypes.func,
+    rowZIndexGetter: PropTypes.func,
     rowsCount: PropTypes.number.isRequired,
     rowHeightGetter: PropTypes.func,
     subRowHeight: PropTypes.number,
@@ -136,6 +137,7 @@ class FixedDataTableBufferedRows extends Component {
   render() /*object*/ {
     var props = this.props;
     var rowClassNameGetter = props.rowClassNameGetter || emptyFunction;
+    var rowZIndexGetter = props.rowZIndexGetter || emptyFunction;
     var rowPositionGetter = props.rowPositionGetter;
 
     var rowsToRender = this.state.rowsToRender;
@@ -196,6 +198,7 @@ class FixedDataTableBufferedRows extends Component {
               'public_fixedDataTable_hasBottomBorder': hasBottomBorder,
             }
           )}
+          zIndex={rowZIndexGetter(rowIndex)}
         />;
     }
 
