@@ -107,6 +107,12 @@ module.exports = {
       commonjs2: 'react-dom',
       amd: 'react-dom',
     },
+    classnames: {
+      root: 'classnames',
+      commonjs: 'classnames',
+      commonjs2: 'classnames',
+      amd: 'classnames',
+    },
   },
 
   node: {

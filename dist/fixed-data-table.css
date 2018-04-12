@@ -88,7 +88,7 @@
   position: absolute;
   right: 0px;
   width: 6px;
-  z-index: 1;
+  z-index: 5;
 }
 
 .fixedDataTableCellLayout_columnResizerContainer:hover {
@@ -129,7 +129,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
-  z-index: 10;
+  z-index: 11;
 }
 
 body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
@@ -180,7 +180,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   left: 0;
   position: absolute;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .fixedDataTableLayout_bottomShadow {
@@ -237,6 +237,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   position: absolute;
   top: 0;
   width: 0;
+  z-index: 2;
 }
 
 .fixedDataTableRowLayout_columnsShadow {
@@ -299,7 +300,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   left: 0;
   overflow: hidden;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   /*transition-duration: 250ms;*/
   /*transition-timing-function: ease;*/
   /*transition-property: background-color width position;*/

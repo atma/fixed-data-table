@@ -36,6 +36,7 @@
   position: absolute;
   top: 0;
   width: 0;
+  z-index: 2;
 }
 
 .fixedDataTableRowLayout/columnsShadow {
