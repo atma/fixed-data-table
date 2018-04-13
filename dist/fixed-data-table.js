@@ -3554,6 +3554,7 @@ var FixedDataTable = function (_Component) {
         onRowTouchEnd: state.touchScrollEnabled ? state.onRowTouchEnd : null,
         onRowTouchMove: state.touchScrollEnabled ? state.onRowTouchMove : null,
         rowClassNameGetter: state.rowClassNameGetter,
+        rowZIndexGetter: state.rowZIndexGetter,
         rowsCount: state.rowsCount,
         rowGetter: state.rowGetter,
         rowHeightGetter: state.rowHeightGetter,
@@ -4304,6 +4305,13 @@ FixedDataTable.propTypes = {
    * `rowClassNameGetter(index)` is called.
    */
   rowClassNameGetter: _propTypes2.default.func,
+
+  /**
+   *
+   * If specified, `rowZIndexGetter(index)` is called for each row and the
+   * returned value overrides `zIndex` for the particular row.
+   */
+  rowZIndexGetter: _propTypes2.default.func,
 
   /**
    * If specified, `rowKeyGetter(index)` is called for each row and the
@@ -6720,6 +6728,7 @@ var FixedDataTableBufferedRows = function (_Component) {
     value: function render() /*object*/{
       var props = this.props;
       var rowClassNameGetter = props.rowClassNameGetter || _emptyFunction2.default;
+      var rowZIndexGetter = props.rowZIndexGetter || _emptyFunction2.default;
       var rowPositionGetter = props.rowPositionGetter;
 
       var rowsToRender = this.state.rowsToRender;
@@ -6775,7 +6784,8 @@ var FixedDataTableBufferedRows = function (_Component) {
           className: (0, _classnames2.default)(rowClassNameGetter(rowIndex), 'public_fixedDataTable_bodyRow', {
             'fixedDataTableLayout_hasBottomBorder': hasBottomBorder,
             'public_fixedDataTable_hasBottomBorder': hasBottomBorder
-          })
+          }),
+          zIndex: rowZIndexGetter(rowIndex)
         });
       }
 
@@ -6821,6 +6831,7 @@ FixedDataTableBufferedRows.propTypes = {
   onRowTouchEnd: _propTypes2.default.func,
   onRowTouchMove: _propTypes2.default.func,
   rowClassNameGetter: _propTypes2.default.func,
+  rowZIndexGetter: _propTypes2.default.func,
   rowsCount: _propTypes2.default.number.isRequired,
   rowHeightGetter: _propTypes2.default.func,
   subRowHeight: _propTypes2.default.number,

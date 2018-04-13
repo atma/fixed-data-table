@@ -239,6 +239,13 @@ class FixedDataTable extends Component {
     rowClassNameGetter: PropTypes.func,
 
     /**
+     *
+     * If specified, `rowZIndexGetter(index)` is called for each row and the
+     * returned value overrides `zIndex` for the particular row.
+     */
+    rowZIndexGetter: PropTypes.func,
+
+    /**
      * If specified, `rowKeyGetter(index)` is called for each row and the
      * returned value overrides `key` for the particular row.
      */
@@ -856,6 +863,7 @@ class FixedDataTable extends Component {
         onRowTouchEnd={state.touchScrollEnabled ? state.onRowTouchEnd : null}
         onRowTouchMove={state.touchScrollEnabled ? state.onRowTouchMove : null}
         rowClassNameGetter={state.rowClassNameGetter}
+        rowZIndexGetter={state.rowZIndexGetter}
         rowsCount={state.rowsCount}
         rowGetter={state.rowGetter}
         rowHeightGetter={state.rowHeightGetter}
