@@ -9,26 +9,26 @@
  * @providesModule fixedDataTableRowLayout
  */
 
-.fixedDataTableRowLayout/main {
+.fixedDataTableRowLayout_main {
   box-sizing: border-box;
   overflow: hidden;
   position: absolute;
   top: 0;
 }
 
-.fixedDataTableRowLayout/body {
+.fixedDataTableRowLayout_body {
   left: 0;
   position: absolute;
   top: 0;
 }
 
-.fixedDataTableRowLayout/rowExpanded {
+.fixedDataTableRowLayout_rowExpanded {
   box-sizing: border-box;
   left: 0;
   position: absolute;
 }
 
-.fixedDataTableRowLayout/fixedColumnsDivider {
+.fixedDataTableRowLayout_fixedColumnsDivider {
   backface-visibility: hidden;
   border-left-style: solid;
   border-left-width: 1px;
@@ -39,16 +39,16 @@
   z-index: 2;
 }
 
-.fixedDataTableRowLayout/columnsShadow {
+.fixedDataTableRowLayout_columnsShadow {
   position: absolute;
   width: 4px;
 }
 
-.fixedDataTableRowLayout/columnsRightShadow {
+.fixedDataTableRowLayout_columnsRightShadow {
   right: 1px;
 }
 
-.fixedDataTableRowLayout/rowWrapper {
+.fixedDataTableRowLayout_rowWrapper {
   position: absolute;
   top: 0;
 }

@@ -34,13 +34,16 @@ module.exports = {
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [
-            'css-loader',
-            path.join(__dirname, '../build_helpers/cssTransformLoader')
-          ].join('!')
+          use: [{
+            loader: 'css-loader'
+          }, {
+            loader: 'postcss-loader'
+          }, {
+            loader: 'sass-loader'
+          }],
         })
       },
       {

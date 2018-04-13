@@ -34,6 +34,10 @@ module.exports = {
         loader: 'null-loader'
       },
       {
+        test: /\.scss$/,
+        loader: 'null-loader'
+      },
+      {
         test: /\.less$/,
         loader: 'null-loader'
       },

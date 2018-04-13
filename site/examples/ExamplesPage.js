@@ -5,18 +5,7 @@
 "use strict";
 
 // Require common FixedDataTable CSS.
-require('frontend-datatable/css/layout/ScrollbarLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableCellLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableCellGroupLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableColumnResizerLineLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableRowLayout.css');
-require('frontend-datatable/css/style/fixedDataTable.css');
-require('frontend-datatable/css/style/fixedDataTableCell.css');
-require('frontend-datatable/css/style/fixedDataTableColumnResizerLine.css');
-require('frontend-datatable/css/style/fixedDataTableColumnReorder.css');
-require('frontend-datatable/css/style/fixedDataTableRow.css');
-require('frontend-datatable/css/style/Scrollbar.css');
+require('../../src/css/index.scss');
 
 var ExampleHeader = require('./ExampleHeader');
 var ExamplesWrapper = require('./ExamplesWrapper');
@@ -51,7 +40,7 @@ var EXAMPLE_COMPONENTS = {
 class ExamplesPage extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       renderPage: false
     };
