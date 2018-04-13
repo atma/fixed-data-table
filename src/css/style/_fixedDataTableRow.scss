@@ -9,20 +9,22 @@
  * @providesModule fixedDataTableRow
  */
 
+@import "../variables";
+
 /**
  * Table row.
  */
 .public_fixedDataTableRow_main {
-  background-color: var(--fbui-white);
+  background-color: $fbui-white;
 }
 
 .public_fixedDataTableRow_highlighted,
 .public_fixedDataTableRow_highlighted .public_fixedDataTableCell_main {
-  background-color: var(--fbui-desktop-background-light);
+  background-color: $fbui-desktop-background-light;
 }
 
 .public_fixedDataTableRow_fixedColumnsDivider {
-  border-color: var(--border-color);
+  border-color: $border-color;
 }
 
 .public_fixedDataTableRow_columnsShadow {

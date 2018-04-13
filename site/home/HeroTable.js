@@ -10,18 +10,7 @@ var Column = FixedDataTable.Column;
 var Cell = FixedDataTable.Cell;
 
 // Require common FixedDataTable CSS.
-require('frontend-datatable/css/layout/ScrollbarLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableCellLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableCellGroupLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableColumnResizerLineLayout.css');
-require('frontend-datatable/css/layout/fixedDataTableRowLayout.css');
-
-require('frontend-datatable/css/style/fixedDataTable.css');
-require('frontend-datatable/css/style/fixedDataTableCell.css');
-require('frontend-datatable/css/style/fixedDataTableColumnResizerLine.css');
-require('frontend-datatable/css/style/fixedDataTableRow.css');
-require('frontend-datatable/css/style/Scrollbar.css');
+require('../../src/css/index.scss');
 
 var dataList = new FakeObjectDataListStore();
 var FakeTextCell = ({rowIndex, field, ...props}) => (

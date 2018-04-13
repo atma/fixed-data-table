@@ -24,11 +24,11 @@
  * Table.
  */
 .public_fixedDataTable_main {
-  border-color: var(--border-color); }
+  border-color: #d3d3d3; }
 
 .public_fixedDataTable_header,
 .public_fixedDataTable_hasBottomBorder {
-  border-color: var(--border-color); }
+  border-color: #d3d3d3; }
 
 .public_fixedDataTable_header .public_fixedDataTableCell_main {
   font-weight: bold; }
@@ -36,7 +36,8 @@
 .public_fixedDataTable_header,
 .public_fixedDataTable_scrollbarSpacer,
 .public_fixedDataTable_header .public_fixedDataTableCell_main {
-  background-color: var(--fbui-desktop-background-light);
+  background-color: #f6f7f8;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#efefef));
   background-image: linear-gradient(#fff, #efefef); }
 
 .public_fixedDataTable_scrollbarSpacer {
@@ -44,8 +45,8 @@
   z-index: 99; }
 
 .public_fixedDataTable_footer .public_fixedDataTableCell_main {
-  background-color: var(--fbui-desktop-background-light);
-  border-color: var(--border-color); }
+  background-color: #f6f7f8;
+  border-color: #d3d3d3; }
 
 .public_fixedDataTable_topShadow {
   background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAF0lEQVR4AWPUkNeSBhHCjJoK2twgFisAFagCCp3pJlAAAAAASUVORK5CYII=) repeat-x; }
@@ -54,7 +55,7 @@
   background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAHElEQVQI12MwNjZmZdAT1+Nm0JDWEGZQk1GTBgAWkwIeAEp52AAAAABJRU5ErkJggg==) repeat-x; }
 
 .public_fixedDataTable_horizontalScrollbar .public_Scrollbar_mainHorizontal {
-  background-color: var(--fbui-white); }
+  background-color: #fff; }
 
 /**
  * Copyright Mercado Libre
@@ -70,8 +71,8 @@
  * Table cell.
  */
 .public_fixedDataTableCell_main {
-  background-color: var(--fbui-white);
-  border-color: var(--border-color); }
+  background-color: #fff;
+  border-color: #d3d3d3; }
 
 .public_fixedDataTableCell_highlighted {
   background-color: #f4f4f4; }
@@ -101,7 +102,8 @@
   position: absolute;
   top: 50%;
   left: 1px;
-  transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 /**
  * Copyright Mercado Libre
@@ -134,20 +136,21 @@
  * Table row.
  */
 .public_fixedDataTableRow_main {
-  background-color: var(--fbui-white); }
+  background-color: #fff; }
 
 .public_fixedDataTableRow_highlighted,
 .public_fixedDataTableRow_highlighted .public_fixedDataTableCell_main {
-  background-color: var(--fbui-desktop-background-light); }
+  background-color: #f6f7f8; }
 
 .public_fixedDataTableRow_fixedColumnsDivider {
-  border-color: var(--border-color); }
+  border-color: #d3d3d3; }
 
 .public_fixedDataTableRow_columnsShadow {
   background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAFklEQVQIHWPSkNeSBmJhTQVtbiDNCgASagIIuJX8OgAAAABJRU5ErkJggg==) repeat-y; }
 
 .public_fixedDataTableRow_columnsRightShadow {
-  transform: rotate(180deg); }
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg); }
 
 /**
  * Copyright Mercado Libre
@@ -166,18 +169,18 @@
 /* Touching the scroll-track directly makes the scroll-track bolder */
 .public_Scrollbar_main.public_Scrollbar_mainActive,
 .public_Scrollbar_main {
-  background-color: var(--scrollbar-track-color);
-  border-left: 1px solid var(--border-color); }
+  background-color: #fff;
+  border-left: 1px solid #d3d3d3; }
 
 .public_Scrollbar_mainOpaque,
 .public_Scrollbar_mainOpaque.public_Scrollbar_mainActive,
 .public_Scrollbar_mainOpaque:hover {
-  background-color: var(--fbui-white); }
+  background-color: #fff; }
 
 .public_Scrollbar_face:after {
-  background-color: var(--scrollbar-face-color); }
+  background-color: #c2c2c2; }
 
 .public_Scrollbar_main:hover .public_Scrollbar_face:after,
 .public_Scrollbar_mainActive .public_Scrollbar_face:after,
 .public_Scrollbar_faceActive:after {
-  background-color: var(--scrollbar-face-active-color); }
+  background-color: #7d7d7d; }

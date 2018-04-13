@@ -20,7 +20,8 @@
  * @providesModule fixedDataTableCellGroupLayout
  */
 .fixedDataTableCellGroupLayout_cellGroup {
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   left: 0;
   overflow: hidden;
   position: absolute;
@@ -50,7 +51,8 @@
   border-right-style: solid;
   border-right-width: 1px;
   border-width: 0 1px 0 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: block;
   overflow: hidden;
   position: absolute;
@@ -66,8 +68,12 @@
   text-align: center; }
 
 .fixedDataTableCellLayout_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .fixedDataTableCellLayout_columnResizerContainer {
   position: absolute;
@@ -106,7 +112,8 @@
 .fixedDataTableColumnResizerLineLayout_main {
   border-right-style: solid;
   border-right-width: 1px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: absolute;
   z-index: 11; }
 
@@ -133,7 +140,8 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 .fixedDataTableLayout_main {
   border-style: solid;
   border-width: 1px;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow: hidden;
   position: relative; }
 
@@ -176,7 +184,8 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  * @providesModule fixedDataTableRowLayout
  */
 .fixedDataTableRowLayout_main {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   overflow: hidden;
   position: absolute;
   top: 0; }
@@ -187,12 +196,14 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   top: 0; }
 
 .fixedDataTableRowLayout_rowExpanded {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   left: 0;
   position: absolute; }
 
 .fixedDataTableRowLayout_fixedColumnsDivider {
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   border-left-style: solid;
   border-left-width: 1px;
   left: 0;
@@ -223,28 +234,32 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  * @providesModule ScrollbarLayout
  */
 .ScrollbarLayout_main {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   outline: none;
   overflow: hidden;
   position: absolute;
-  user-select: none; }
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 .ScrollbarLayout_mainVertical {
   bottom: 0;
   right: 0;
   top: 0;
-  width: var(--scrollbar-size); }
+  width: 15px; }
 
 .ScrollbarLayout_mainHorizontal {
   bottom: 0;
-  height: var(--scrollbar-size);
+  height: 15px;
   left: 0;
   /*transition-property: background-color height;*/ }
 
 /* Touching the scroll-track directly makes the scroll-track bolder */
 .ScrollbarLayout_mainHorizontal.public_Scrollbar_mainActive,
 .ScrollbarLayout_mainHorizontal:hover {
-  height: var(--scrollbar-size-large); }
+  height: 17px; }
 
 .ScrollbarLayout_face {
   left: 0;
@@ -262,7 +277,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  * scrollface element while dragging it.
  */
 .ScrollbarLayout_face:after {
-  border-radius: var(--scrollbar-face-radius);
+  border-radius: 6px;
   content: '';
   display: block;
   position: absolute;
@@ -274,14 +289,14 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   top: 0; }
 
 .ScrollbarLayout_faceHorizontal:after {
-  bottom: var(--scrollbar-face-margin);
+  bottom: 4px;
   left: 0;
-  top: var(--scrollbar-face-margin);
+  top: 4px;
   width: 100%; }
 
 .ScrollbarLayout_faceHorizontal.public_Scrollbar_faceActive:after,
 .ScrollbarLayout_main:hover .ScrollbarLayout_faceHorizontal:after {
-  bottom: calc(var(--scrollbar-face-margin)/2); }
+  bottom: calc(4px / 2); }
 
 .ScrollbarLayout_faceVertical {
   left: 0;
@@ -290,14 +305,14 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 
 .ScrollbarLayout_faceVertical:after {
   height: 100%;
-  left: var(--scrollbar-face-margin);
-  right: var(--scrollbar-face-margin);
+  left: 4px;
+  right: 4px;
   top: 0; }
 
 .ScrollbarLayout_main:hover .ScrollbarLayout_faceVertical:after,
 .ScrollbarLayout_faceVertical.public_Scrollbar_faceActive:after {
-  left: calc(var(--scrollbar-face-margin)/2);
-  right: calc(var(--scrollbar-face-margin)/2); }
+  left: calc(4px / 2);
+  right: calc(4px / 2); }
 
 /**
  * Copyright Mercado Libre
@@ -314,11 +329,11 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  * Table.
  */
 .public_fixedDataTable_main {
-  border-color: var(--border-color); }
+  border-color: #d3d3d3; }
 
 .public_fixedDataTable_header,
 .public_fixedDataTable_hasBottomBorder {
-  border-color: var(--border-color); }
+  border-color: #d3d3d3; }
 
 .public_fixedDataTable_header .public_fixedDataTableCell_main {
   font-weight: bold; }
@@ -326,7 +341,8 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 .public_fixedDataTable_header,
 .public_fixedDataTable_scrollbarSpacer,
 .public_fixedDataTable_header .public_fixedDataTableCell_main {
-  background-color: var(--fbui-desktop-background-light);
+  background-color: #f6f7f8;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#efefef));
   background-image: linear-gradient(#fff, #efefef); }
 
 .public_fixedDataTable_scrollbarSpacer {
@@ -334,8 +350,8 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   z-index: 99; }
 
 .public_fixedDataTable_footer .public_fixedDataTableCell_main {
-  background-color: var(--fbui-desktop-background-light);
-  border-color: var(--border-color); }
+  background-color: #f6f7f8;
+  border-color: #d3d3d3; }
 
 .public_fixedDataTable_topShadow {
   background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAF0lEQVR4AWPUkNeSBhHCjJoK2twgFisAFagCCp3pJlAAAAAASUVORK5CYII=) repeat-x; }
@@ -344,7 +360,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAECAYAAABP2FU6AAAAHElEQVQI12MwNjZmZdAT1+Nm0JDWEGZQk1GTBgAWkwIeAEp52AAAAABJRU5ErkJggg==) repeat-x; }
 
 .public_fixedDataTable_horizontalScrollbar .public_Scrollbar_mainHorizontal {
-  background-color: var(--fbui-white); }
+  background-color: #fff; }
 
 /**
  * Copyright Mercado Libre
@@ -360,8 +376,8 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  * Table cell.
  */
 .public_fixedDataTableCell_main {
-  background-color: var(--fbui-white);
-  border-color: var(--border-color); }
+  background-color: #fff;
+  border-color: #d3d3d3; }
 
 .public_fixedDataTableCell_highlighted {
   background-color: #f4f4f4; }
@@ -391,7 +407,8 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   position: absolute;
   top: 50%;
   left: 1px;
-  transform: translateY(-50%); }
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
 
 /**
  * Copyright Mercado Libre
@@ -424,20 +441,21 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  * Table row.
  */
 .public_fixedDataTableRow_main {
-  background-color: var(--fbui-white); }
+  background-color: #fff; }
 
 .public_fixedDataTableRow_highlighted,
 .public_fixedDataTableRow_highlighted .public_fixedDataTableCell_main {
-  background-color: var(--fbui-desktop-background-light); }
+  background-color: #f6f7f8; }
 
 .public_fixedDataTableRow_fixedColumnsDivider {
-  border-color: var(--border-color); }
+  border-color: #d3d3d3; }
 
 .public_fixedDataTableRow_columnsShadow {
   background: 0 0 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAABCAYAAAD5PA/NAAAAFklEQVQIHWPSkNeSBmJhTQVtbiDNCgASagIIuJX8OgAAAABJRU5ErkJggg==) repeat-y; }
 
 .public_fixedDataTableRow_columnsRightShadow {
-  transform: rotate(180deg); }
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg); }
 
 /**
  * Copyright Mercado Libre
@@ -456,18 +474,18 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
 /* Touching the scroll-track directly makes the scroll-track bolder */
 .public_Scrollbar_main.public_Scrollbar_mainActive,
 .public_Scrollbar_main {
-  background-color: var(--scrollbar-track-color);
-  border-left: 1px solid var(--border-color); }
+  background-color: #fff;
+  border-left: 1px solid #d3d3d3; }
 
 .public_Scrollbar_mainOpaque,
 .public_Scrollbar_mainOpaque.public_Scrollbar_mainActive,
 .public_Scrollbar_mainOpaque:hover {
-  background-color: var(--fbui-white); }
+  background-color: #fff; }
 
 .public_Scrollbar_face:after {
-  background-color: var(--scrollbar-face-color); }
+  background-color: #c2c2c2; }
 
 .public_Scrollbar_main:hover .public_Scrollbar_face:after,
 .public_Scrollbar_mainActive .public_Scrollbar_face:after,
 .public_Scrollbar_faceActive:after {
-  background-color: var(--scrollbar-face-active-color); }
+  background-color: #7d7d7d; }
