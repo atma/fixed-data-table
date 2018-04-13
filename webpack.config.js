@@ -27,15 +27,15 @@ var plugins = [
 
 var entry = {};
 var baseEntryPoints = glob.sync(
-  path.join(__dirname, './src/css/layout/*.css')
+  path.join(__dirname, './src/css/layout.scss')
 );
 
 var styleEntryPoints = glob.sync(
-  path.join(__dirname, './src/css/style/*.css')
+  path.join(__dirname, './src/css/style.scss')
 );
 
 var mainEntryPoints = glob.sync(
-  path.join(__dirname, './src/**/*.css')
+  path.join(__dirname, './src/css/index.scss')
 );
 mainEntryPoints.push('./src/FixedDataTableRoot.js');
 
@@ -73,13 +73,16 @@ module.exports = {
         use: 'babel-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [
-            'css-loader',
-            path.join(__dirname, './build_helpers/cssTransformLoader.js')
-          ].join('!')
+          use: [{
+            loader: 'css-loader'
+          }, {
+            loader: 'postcss-loader'
+          }, {
+            loader: 'sass-loader'
+          }],
         })
       },
     ],

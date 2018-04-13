@@ -1,0 +1,40 @@
+/**
+ * Copyright Mercado Libre
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule Scrollbar
+ *
+ */
+
+@import "../variables";
+
+/**
+ * Scrollbars.
+ */
+
+/* Touching the scroll-track directly makes the scroll-track bolder */
+.public_Scrollbar_main.public_Scrollbar_mainActive,
+.public_Scrollbar_main {
+  background-color: $scrollbar-track-color;
+  border-left: 1px solid $border-color;
+}
+
+.public_Scrollbar_mainOpaque,
+.public_Scrollbar_mainOpaque.public_Scrollbar_mainActive,
+.public_Scrollbar_mainOpaque:hover {
+  background-color: $fbui-white;
+}
+
+.public_Scrollbar_face:after {
+  background-color: $scrollbar-face-color;
+}
+
+.public_Scrollbar_main:hover .public_Scrollbar_face:after,
+.public_Scrollbar_mainActive .public_Scrollbar_face:after,
+.public_Scrollbar_faceActive:after {
+  background-color: $scrollbar-face-active-color;
+}

@@ -1,7 +1,7 @@
 /**
  * Column reorder goodies.
  */
-.fixedDataTableCellLayout/columnReorderContainer {
+.fixedDataTableCellLayout_columnReorderContainer {
   border-color: #0284ff;
   background-color: rgba(0,0,0,0.1);
   width: 12px;
@@ -9,7 +9,7 @@
   float: left;
   cursor: move;
 }
-.fixedDataTableCellLayout/columnReorderContainer:after {
+.fixedDataTableCellLayout_columnReorderContainer:after {
 	content: '::';
 	position: absolute;
 	top: 50%;

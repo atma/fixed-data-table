@@ -9,7 +9,9 @@
  * @providesModule ScrollbarLayout
  */
 
-.ScrollbarLayout/main {
+@import "../variables";
+
+.ScrollbarLayout_main {
   box-sizing: border-box;
   outline: none;
   overflow: hidden;
@@ -17,27 +19,27 @@
   user-select: none;
 }
 
-.ScrollbarLayout/mainVertical {
+.ScrollbarLayout_mainVertical {
   bottom: 0;
   right: 0;
   top: 0;
-  width: var(--scrollbar-size);
+  width: $scrollbar-size;
 }
 
-.ScrollbarLayout/mainHorizontal {
+.ScrollbarLayout_mainHorizontal {
   bottom: 0;
-  height: var(--scrollbar-size);
+  height: $scrollbar-size;
   left: 0;
   /*transition-property: background-color height;*/
 }
 
 /* Touching the scroll-track directly makes the scroll-track bolder */
-.ScrollbarLayout/mainHorizontal.public/Scrollbar/mainActive,
-.ScrollbarLayout/mainHorizontal:hover {
-  height: var(--scrollbar-size-large);
+.ScrollbarLayout_mainHorizontal.public_Scrollbar_mainActive,
+.ScrollbarLayout_mainHorizontal:hover {
+  height: $scrollbar-size-large;
 }
 
-.ScrollbarLayout/face {
+.ScrollbarLayout_face {
   left: 0;
   overflow: hidden;
   position: absolute;
@@ -53,47 +55,47 @@
  * we can get the correct `event.offsetX` and `event.offsetY` from the
  * scrollface element while dragging it.
  */
-.ScrollbarLayout/face:after {
-  border-radius: var(--scrollbar-face-radius);
+.ScrollbarLayout_face:after {
+  border-radius: $scrollbar-face-radius;
   content: '';
   display: block;
   position: absolute;
   /*transition: background-color 250ms ease;*/
 }
 
-.ScrollbarLayout/faceHorizontal {
+.ScrollbarLayout_faceHorizontal {
   bottom: 0;
   left: 0;
   top: 0;
 }
 
-.ScrollbarLayout/faceHorizontal:after {
-  bottom: var(--scrollbar-face-margin);
+.ScrollbarLayout_faceHorizontal:after {
+  bottom: $scrollbar-face-margin;
   left: 0;
-  top: var(--scrollbar-face-margin);
+  top: $scrollbar-face-margin;
   width: 100%;
 }
 
-.ScrollbarLayout/faceHorizontal.public/Scrollbar/faceActive:after,
-.ScrollbarLayout/main:hover .ScrollbarLayout/faceHorizontal:after {
-  bottom: calc(var(--scrollbar-face-margin)/2);
+.ScrollbarLayout_faceHorizontal.public_Scrollbar_faceActive:after,
+.ScrollbarLayout_main:hover .ScrollbarLayout_faceHorizontal:after {
+  bottom: calc(#{$scrollbar-face-margin} / 2);
 }
 
-.ScrollbarLayout/faceVertical {
+.ScrollbarLayout_faceVertical {
   left: 0;
   right: 0;
   top: 0;
 }
 
-.ScrollbarLayout/faceVertical:after {
+.ScrollbarLayout_faceVertical:after {
   height: 100%;
-  left: var(--scrollbar-face-margin);
-  right: var(--scrollbar-face-margin);
+  left: $scrollbar-face-margin;
+  right: $scrollbar-face-margin;
   top: 0;
 }
 
-.ScrollbarLayout/main:hover .ScrollbarLayout/faceVertical:after,
-.ScrollbarLayout/faceVertical.public/Scrollbar/faceActive:after {
-  left: calc(var(--scrollbar-face-margin)/2);
-  right: calc(var(--scrollbar-face-margin)/2);
+.ScrollbarLayout_main:hover .ScrollbarLayout_faceVertical:after,
+.ScrollbarLayout_faceVertical.public_Scrollbar_faceActive:after {
+  left: calc(#{$scrollbar-face-margin} / 2);
+  right: calc(#{$scrollbar-face-margin} / 2);
 }
