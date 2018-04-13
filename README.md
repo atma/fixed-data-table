@@ -33,7 +33,12 @@ npm install frontend-datatable
 ```
 
 Add the default stylesheet `dist/fixed-data-table.css` using a link tag or import it with a CSS module.
-*TODO:* Migrate to Sass and distribute with style sources.
+
+In case when your project can process Sass it is better to import `.scss` source files instead of `.css`:
+
+```scss
+@import '~frontend-datatable/src/css/index';
+```
 
 Implementing a table involves three component types: `<Table/>`,`<Column/>`, and `<Cell/>`.
 
