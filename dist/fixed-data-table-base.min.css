@@ -19,27 +19,23 @@
  *
  * @providesModule fixedDataTableCellGroupLayout
  */
-
 .fixedDataTableCellGroupLayout_cellGroup {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   left: 0;
   overflow: hidden;
   position: absolute;
   top: 0;
-  white-space: nowrap;
-}
+  white-space: nowrap; }
 
 .fixedDataTableCellGroupLayout_cellGroup > .public_fixedDataTableCell_main {
   display: inline-block;
   vertical-align: top;
-  white-space: normal;
-}
+  white-space: normal; }
 
 .fixedDataTableCellGroupLayout_cellGroupWrapper {
   position: absolute;
-  top: 0;
-}
+  top: 0; }
+
 /**
  * Copyright Mercado Libre
  * All rights reserved.
@@ -50,61 +46,47 @@
  *
  * @providesModule fixedDataTableCellLayout
  */
-
 .fixedDataTableCellLayout_main {
   border-right-style: solid;
   border-right-width: 1px;
   border-width: 0 1px 0 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   display: block;
   overflow: hidden;
   position: absolute;
-  white-space: normal;
-}
+  white-space: normal; }
 
 .fixedDataTableCellLayout_lastChild {
-  border-width: 0 1px 1px 0;
-}
+  border-width: 0 1px 1px 0; }
 
 .fixedDataTableCellLayout_alignRight {
-  text-align: right;
-}
+  text-align: right; }
 
 .fixedDataTableCellLayout_alignCenter {
-  text-align: center;
-}
+  text-align: center; }
 
 .fixedDataTableCellLayout_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
+  align-items: center; }
 
 .fixedDataTableCellLayout_columnResizerContainer {
   position: absolute;
   right: 0px;
   width: 6px;
-  z-index: 5;
-}
+  z-index: 5; }
 
 .fixedDataTableCellLayout_columnResizerContainer:hover {
-  cursor: ew-resize;
-}
+  cursor: ew-resize; }
 
 .fixedDataTableCellLayout_columnResizerContainer:hover .fixedDataTableCellLayout_columnResizerKnob {
-  visibility: visible;
-}
+  visibility: visible; }
 
 .fixedDataTableCellLayout_columnResizerKnob {
   position: absolute;
   right: 0px;
   visibility: hidden;
-  width: 4px;
-}
+  width: 4px; }
+
 /**
  * Copyright Mercado Libre
  * All rights reserved.
@@ -115,34 +97,29 @@
  *
  * @providesModule fixedDataTableColumnResizerLineLayout
  */
-
 .fixedDataTableColumnResizerLineLayout_mouseArea {
   cursor: ew-resize;
   position: absolute;
   right: -5px;
-  width: 12px;
-}
+  width: 12px; }
 
 .fixedDataTableColumnResizerLineLayout_main {
   border-right-style: solid;
   border-right-width: 1px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: absolute;
-  z-index: 11;
-}
+  z-index: 11; }
 
 body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   /* the resizer line is in the wrong position in RTL with no easy fix.
    * Disabling is more useful than displaying it.
    * #167 (github) should look into this and come up with a permanent fix.
    */
-  display: none !important;
-}
+  display: none !important; }
 
 .fixedDataTableColumnResizerLineLayout_hiddenElem {
-  display: none !important;
-}
+  display: none !important; }
+
 /**
  * Copyright Mercado Libre
  * All rights reserved.
@@ -153,26 +130,21 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  *
  * @providesModule fixedDataTableLayout
  */
-
 .fixedDataTableLayout_main {
   border-style: solid;
   border-width: 1px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   overflow: hidden;
-  position: relative;
-}
+  position: relative; }
 
 .fixedDataTableLayout_header,
 .fixedDataTableLayout_hasBottomBorder {
   border-bottom-style: solid;
-  border-bottom-width: 1px;
-}
+  border-bottom-width: 1px; }
 
 .fixedDataTableLayout_footer .public_fixedDataTableCell_main {
   border-top-style: solid;
-  border-top-width: 1px;
-}
+  border-top-width: 1px; }
 
 .fixedDataTableLayout_topShadow,
 .fixedDataTableLayout_bottomShadow {
@@ -180,22 +152,19 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   left: 0;
   position: absolute;
   right: 0;
-  z-index: 2;
-}
+  z-index: 2; }
 
 .fixedDataTableLayout_bottomShadow {
-  margin-top: -4px;
-}
+  margin-top: -4px; }
 
 .fixedDataTableLayout_rowsContainer {
   overflow: hidden;
-  position: relative;
-}
+  position: relative; }
 
 .fixedDataTableLayout_horizontalScrollbar {
   bottom: 0;
-  position: absolute;
-}
+  position: absolute; }
+
 /**
  * Copyright Mercado Libre
  * All rights reserved.
@@ -206,53 +175,43 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  *
  * @providesModule fixedDataTableRowLayout
  */
-
 .fixedDataTableRowLayout_main {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   overflow: hidden;
   position: absolute;
-  top: 0;
-}
+  top: 0; }
 
 .fixedDataTableRowLayout_body {
   left: 0;
   position: absolute;
-  top: 0;
-}
+  top: 0; }
 
 .fixedDataTableRowLayout_rowExpanded {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   left: 0;
-  position: absolute;
-}
+  position: absolute; }
 
 .fixedDataTableRowLayout_fixedColumnsDivider {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   border-left-style: solid;
   border-left-width: 1px;
   left: 0;
   position: absolute;
   top: 0;
   width: 0;
-  z-index: 2;
-}
+  z-index: 2; }
 
 .fixedDataTableRowLayout_columnsShadow {
   position: absolute;
-  width: 4px;
-}
+  width: 4px; }
 
 .fixedDataTableRowLayout_columnsRightShadow {
-  right: 1px;
-}
+  right: 1px; }
 
 .fixedDataTableRowLayout_rowWrapper {
   position: absolute;
-  top: 0;
-}
+  top: 0; }
+
 /**
  * Copyright Mercado Libre
  * All rights reserved.
@@ -263,38 +222,29 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  *
  * @providesModule ScrollbarLayout
  */
-
 .ScrollbarLayout_main {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   outline: none;
   overflow: hidden;
   position: absolute;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
+  user-select: none; }
 
 .ScrollbarLayout_mainVertical {
   bottom: 0;
   right: 0;
   top: 0;
-  width: 15px;
-}
+  width: var(--scrollbar-size); }
 
 .ScrollbarLayout_mainHorizontal {
   bottom: 0;
-  height: 15px;
+  height: var(--scrollbar-size);
   left: 0;
-  /*transition-property: background-color height;*/
-}
+  /*transition-property: background-color height;*/ }
 
 /* Touching the scroll-track directly makes the scroll-track bolder */
 .ScrollbarLayout_mainHorizontal.public_Scrollbar_mainActive,
 .ScrollbarLayout_mainHorizontal:hover {
-  height: 17px;
-}
+  height: var(--scrollbar-size-large); }
 
 .ScrollbarLayout_face {
   left: 0;
@@ -303,8 +253,7 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   z-index: 2;
   /*transition-duration: 250ms;*/
   /*transition-timing-function: ease;*/
-  /*transition-property: background-color width position;*/
-}
+  /*transition-property: background-color width position;*/ }
 
 /**
  * This selector renders the "nub" of the scrollface. The nub must
@@ -313,46 +262,39 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
  * scrollface element while dragging it.
  */
 .ScrollbarLayout_face:after {
-  border-radius: 6px;
+  border-radius: var(--scrollbar-face-radius);
   content: '';
   display: block;
   position: absolute;
-  /*transition: background-color 250ms ease;*/
-}
+  /*transition: background-color 250ms ease;*/ }
 
 .ScrollbarLayout_faceHorizontal {
   bottom: 0;
   left: 0;
-  top: 0;
-}
+  top: 0; }
 
 .ScrollbarLayout_faceHorizontal:after {
-  bottom: 4px;
+  bottom: var(--scrollbar-face-margin);
   left: 0;
-  top: 4px;
-  width: 100%;
-}
+  top: var(--scrollbar-face-margin);
+  width: 100%; }
 
 .ScrollbarLayout_faceHorizontal.public_Scrollbar_faceActive:after,
 .ScrollbarLayout_main:hover .ScrollbarLayout_faceHorizontal:after {
-  bottom: calc(4px/2);
-}
+  bottom: calc(var(--scrollbar-face-margin)/2); }
 
 .ScrollbarLayout_faceVertical {
   left: 0;
   right: 0;
-  top: 0;
-}
+  top: 0; }
 
 .ScrollbarLayout_faceVertical:after {
   height: 100%;
-  left: 4px;
-  right: 4px;
-  top: 0;
-}
+  left: var(--scrollbar-face-margin);
+  right: var(--scrollbar-face-margin);
+  top: 0; }
 
 .ScrollbarLayout_main:hover .ScrollbarLayout_faceVertical:after,
 .ScrollbarLayout_faceVertical.public_Scrollbar_faceActive:after {
-  left: calc(4px/2);
-  right: calc(4px/2);
-}
+  left: calc(var(--scrollbar-face-margin)/2);
+  right: calc(var(--scrollbar-face-margin)/2); }

@@ -9,7 +9,7 @@
  * @providesModule fixedDataTableCellLayout
  */
 
-.fixedDataTableCellLayout/main {
+.fixedDataTableCellLayout_main {
   border-right-style: solid;
   border-right-width: 1px;
   border-width: 0 1px 0 0;
@@ -20,39 +20,39 @@
   white-space: normal;
 }
 
-.fixedDataTableCellLayout/lastChild {
+.fixedDataTableCellLayout_lastChild {
   border-width: 0 1px 1px 0;
 }
 
-.fixedDataTableCellLayout/alignRight {
+.fixedDataTableCellLayout_alignRight {
   text-align: right;
 }
 
-.fixedDataTableCellLayout/alignCenter {
+.fixedDataTableCellLayout_alignCenter {
   text-align: center;
 }
 
-.fixedDataTableCellLayout/wrap {
+.fixedDataTableCellLayout_wrap {
   display: flex;
   align-items: center;
 }
 
-.fixedDataTableCellLayout/columnResizerContainer {
+.fixedDataTableCellLayout_columnResizerContainer {
   position: absolute;
   right: 0px;
   width: 6px;
   z-index: 5;
 }
 
-.fixedDataTableCellLayout/columnResizerContainer:hover {
+.fixedDataTableCellLayout_columnResizerContainer:hover {
   cursor: ew-resize;
 }
 
-.fixedDataTableCellLayout/columnResizerContainer:hover .fixedDataTableCellLayout/columnResizerKnob {
+.fixedDataTableCellLayout_columnResizerContainer:hover .fixedDataTableCellLayout_columnResizerKnob {
   visibility: visible;
 }
 
-.fixedDataTableCellLayout/columnResizerKnob {
+.fixedDataTableCellLayout_columnResizerKnob {
   position: absolute;
   right: 0px;
   visibility: hidden;

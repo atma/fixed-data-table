@@ -9,7 +9,7 @@
  * @providesModule fixedDataTableCellGroupLayout
  */
 
-.fixedDataTableCellGroupLayout/cellGroup {
+.fixedDataTableCellGroupLayout_cellGroup {
   backface-visibility: hidden;
   left: 0;
   overflow: hidden;
@@ -18,13 +18,13 @@
   white-space: nowrap;
 }
 
-.fixedDataTableCellGroupLayout/cellGroup > .public/fixedDataTableCell/main {
+.fixedDataTableCellGroupLayout_cellGroup > .public_fixedDataTableCell_main {
   display: inline-block;
   vertical-align: top;
   white-space: normal;
 }
 
-.fixedDataTableCellGroupLayout/cellGroupWrapper {
+.fixedDataTableCellGroupLayout_cellGroupWrapper {
   position: absolute;
   top: 0;
 }

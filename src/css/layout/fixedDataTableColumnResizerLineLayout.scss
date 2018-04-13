@@ -9,14 +9,14 @@
  * @providesModule fixedDataTableColumnResizerLineLayout
  */
 
-.fixedDataTableColumnResizerLineLayout/mouseArea {
+.fixedDataTableColumnResizerLineLayout_mouseArea {
   cursor: ew-resize;
   position: absolute;
   right: -5px;
   width: 12px;
 }
 
-.fixedDataTableColumnResizerLineLayout/main {
+.fixedDataTableColumnResizerLineLayout_main {
   border-right-style: solid;
   border-right-width: 1px;
   box-sizing: border-box;
@@ -24,7 +24,7 @@
   z-index: 11;
 }
 
-body[dir="rtl"] .fixedDataTableColumnResizerLineLayout/main {
+body[dir="rtl"] .fixedDataTableColumnResizerLineLayout_main {
   /* the resizer line is in the wrong position in RTL with no easy fix.
    * Disabling is more useful than displaying it.
    * #167 (github) should look into this and come up with a permanent fix.
@@ -32,6 +32,6 @@ body[dir="rtl"] .fixedDataTableColumnResizerLineLayout/main {
   display: none !important;
 }
 
-.fixedDataTableColumnResizerLineLayout/hiddenElem {
+.fixedDataTableColumnResizerLineLayout_hiddenElem {
   display: none !important;
 }
