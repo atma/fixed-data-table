@@ -1,10 +1,10 @@
 build_helpers
 site
-src
 __site__
 __site_prerender__
 .editorconfig
 .babelrc
+postcss.config.js
 webpack.config.js
 webpack.config-test.js
 CONTRIBUTING.md
