@@ -1,10 +1,10 @@
 #!/bin/bash
 set -e
 
-PROJECT_DIRECTORY="frontend-datatable"
+PROJECT_DIRECTORY="fury_frontend-datatable"
 SITE_DIRECTORY="$PROJECT_DIRECTORY-site"
-GITHUB_REPO="git@github.com:mercadolibre/frontend-datatable.git"
-GH_PAGES_SITE="http://mercadolibre.github.io/frontend-datatable/"
+GITHUB_REPO="git@github.com:mercadolibre/fury_frontend-datatable.git"
+GH_PAGES_SITE="http://mercadolibre.github.io/fury_frontend-datatable/"
 
 # Move to parent dir
 cd ../
