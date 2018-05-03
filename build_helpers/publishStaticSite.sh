@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-PROJECT_DIRECTORY="fury_frontend-datatable"
+PROJECT_DIRECTORY="frontend-datatable"
 SITE_DIRECTORY="$PROJECT_DIRECTORY-site"
 GITHUB_REPO="git@github.com:mercadolibre/fury_frontend-datatable.git"
 GH_PAGES_SITE="http://mercadolibre.github.io/fury_frontend-datatable/"
